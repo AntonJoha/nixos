@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo $(curl --silent wttr.in/Karlstad?format=1)
