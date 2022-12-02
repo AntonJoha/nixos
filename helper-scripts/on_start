@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#Clear the download folder on each boot. 
+rm -rf /home/kentagent/Downloads/*
