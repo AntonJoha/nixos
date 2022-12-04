@@ -1,0 +1,16 @@
+
+
+
+# What is this
+
+This is my nixos config. 
+It's purely made for me to have a similar setup between both desktop and laptop.
+
+It's not perfect right now however. Boot folder isn't the same for each for example. 
+This means that the hardware and configuration nix files are not going to be the same for both systems.
+Modify after need.
+
+You also need to manually link by yourself from this folder to /etc/nixos and ./config.
+
+__WARNING__ do not link this whole folder to .config or something similar as other applications containing sensitive data might store it in .config. 
+It's therefore too easy to upload something sensitive. 

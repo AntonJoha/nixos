@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-xreader "$@" &
-disown xreader
+zathura "$@" &
+disown zathura

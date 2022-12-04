@@ -9,13 +9,9 @@ CHAR [a-z]+
 
 %%
 
-
-
-
 .*"<"url">" {}
 
 "<""/"url.*     {}
-
 
 %%
 #include <math.h>

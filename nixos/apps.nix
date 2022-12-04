@@ -6,7 +6,8 @@ nixpkgs.config = {
 };
 
  environment.systemPackages = with pkgs; [
-	wget
+    zathura
+    wget
 	alacritty	
 	git
 	mpv
@@ -16,7 +17,6 @@ nixpkgs.config = {
 	cargo
     rustup
 	discord
-	zip
 	pkgs.man-pages
 	pkgs.man-pages-posix
 	nmap
@@ -27,12 +27,9 @@ nixpkgs.config = {
 	iwd
 	gnumake
 	dunst
-	openvpn
 	python
-	neofetch
 	zip
 	unzip
-	fortune
 	bintools-unwrapped
 	virtualbox
     inetutils
