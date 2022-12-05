@@ -2,3 +2,9 @@
 
 #Clear the download folder on each boot. 
 rm -rf /home/kentagent/Downloads/*
+
+
+#Start the notification deamon
+dunst &
+
+notify-send "Startup done"

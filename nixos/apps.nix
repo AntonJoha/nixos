@@ -41,6 +41,7 @@ nixpkgs.config = {
     dict
     android-studio
     android-tools
+    libnotify
  ];
 
 
