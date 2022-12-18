@@ -39,6 +39,7 @@ nixpkgs.overlays = [
           vimtex
           coc-python
           nord-nvim
+          copilot-vim
         ]; 
           opt = [];
         };
@@ -62,6 +63,12 @@ nixpkgs.overlays = [
           colorscheme nord
           colorscheme evening
           hi Pmenu guibg=grey
+
+
+
+          "Remapping for the terminal command to allow <ESC> instead of \N combination
+          tnoremap <Esc> <C-\><C-n><CR>
+
           " ...
         '';
       };

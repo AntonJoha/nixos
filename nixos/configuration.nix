@@ -12,6 +12,7 @@
       ./nvim.nix
       ./apps.nix
       ./python.nix
+      ./work.nix
     ];
 
 
@@ -91,7 +92,7 @@ services.xserver.libinput.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
  users.users.kentagent = {
    isNormalUser = true;
-   extraGroups = [ "wheel" "netdev" "vboxusers" ]; # Enable ‘sudo’ for the user.
+   extraGroups = [ "wheel" "netdev" "vboxusers" "docker" ]; # Enable ‘sudo’ for the user.
    packages = with pkgs; [
      firefox
     ];
