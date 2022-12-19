@@ -42,6 +42,8 @@ nixpkgs.config = {
     android-studio
     android-tools
     libnotify
+    tut
+    networkmanagerapplet
  ];
 
 
