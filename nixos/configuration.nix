@@ -4,7 +4,6 @@
 
 { config, pkgs, ... }:
 
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -16,21 +15,20 @@
       ./cronjob.nix
     ];
 
-
-  # Use the systemd-boot EFI boot loader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "kentagent"; # Define your hostname.
-  # Pick only one of the below networking options.
-networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
-networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-networking.wireless.userControlled.enable = true;
-networking.wireless.userControlled.group = "network";
-hardware.bluetooth.enable = true;
-services.blueman.enable = true;
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -94,7 +92,7 @@ services.xserver.libinput.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
  users.users.kentagent = {
    isNormalUser = true;
-   extraGroups = [ "wheel" "netdev" "vboxusers" "network"]; # Enable ‘sudo’ for the user.
+   extraGroups = [ "wheel" "docker" "netdev" "vboxusers" ]; # Enable ‘sudo’ for the user.
    packages = with pkgs; [
      firefox
     ];
