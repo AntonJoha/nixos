@@ -44,6 +44,7 @@ nixpkgs.config = {
     libnotify
     tut
     networkmanagerapplet
+    element-desktop
  ];
 
 
