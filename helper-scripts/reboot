@@ -1,0 +1,11 @@
+
+
+echo "Shutting down..."
+
+#Docker containers running prevent the computer from shutting down. 
+echo "Killing containers"
+docker kill $(docker ps -q)
+sleep 1 s
+
+
+shutdown -r -h now
