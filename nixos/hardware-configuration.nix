@@ -1,1 +1,0 @@
-/home/kentagent/nixos/laptop_specific/hardware-configuration.nix
