@@ -39,12 +39,11 @@ nixpkgs.config = {
     gnupg
     pinentry
     dict
-    android-studio
-    android-tools
     libnotify
     tut
     networkmanagerapplet
     element-desktop
+    steam
  ];
 
 
@@ -56,6 +55,14 @@ programs.gnupg.agent = {
 
 services.pcscd.enable = true;
 documentation.dev.enable = true;
+
+
+programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
+
 
 
    virtualisation.virtualbox.host.enable = true;
