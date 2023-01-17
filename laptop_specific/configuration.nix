@@ -31,6 +31,11 @@ hardware.bluetooth.enable = true;
 services.blueman.enable = true;
 
 
+hardware.bluetooth.settings = {
+  General = {
+    Enable = "Source,Sink,Media,Socket";
+  };
+};
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -86,7 +91,14 @@ i18n.defaultLocale = "sv_SE.UTF-8";
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+
+  hardware.pulseaudio = {
+    enable = true;
+    extraModules = [ ];
+    package = pkgs.pulseaudioFull;
+  };
+
+
 
   # Enable touchpad support (enabled default in most desktopManager).
 services.xserver.libinput.enable = true;
