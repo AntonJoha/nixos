@@ -40,6 +40,7 @@ nixpkgs.overlays = [
           coc-python
           nord-nvim
           copilot-vim
+          vimwiki
         ]; 
           opt = [];
         };

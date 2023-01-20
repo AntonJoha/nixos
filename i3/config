@@ -49,6 +49,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty -o font.size=8
 
+# take a screenshot
+bindsym --release $mod+p exec --no-startup-id /home/kentagent/nixos/helper-scripts/screenshot
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
