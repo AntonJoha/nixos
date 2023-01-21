@@ -8,11 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nvim.nix
-      ./apps.nix
-      ./python.nix
-      ./work.nix
-      ./cronjob.nix
+      ./nixos/nvim.nix
+      ./nixos/apps.nix
+      ./nixos/python.nix
+      ./nixos/work.nix
+      ./nixos/cronjob.nix
     ];
 
   # Bootloader.
