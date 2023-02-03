@@ -36,6 +36,7 @@ nixpkgs.overlays = [
           coc-rust-analyzer
           coc-clangd
           coc-vimtex
+          coc-go
           vimtex
           coc-python
           nord-nvim

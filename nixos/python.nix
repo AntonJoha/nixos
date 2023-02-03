@@ -10,6 +10,9 @@
       mininet-python
       pyqt5
       networkx
+      termcolor
+      tkinter
+      pillow
    ]))
   ];
 
