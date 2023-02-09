@@ -7,12 +7,12 @@
    [ 
       numpy
       jedi
-      mininet-python
       pyqt5
+      flask
+      pillow
+      tkinter
       networkx
       termcolor
-      tkinter
-      pillow
    ]))
   ];
 

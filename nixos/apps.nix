@@ -45,6 +45,10 @@ nixpkgs.config = {
     element-desktop
     steam
     slack
+    obsidian
+    prismlauncher
+    python310Packages.tkinter
+    zoom-us
  ];
 
 

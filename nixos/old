@@ -1,0 +1,13 @@
+    (
+    buildPythonPackage rec {
+      pname = "escpos";
+      version = "1.9";
+      src = fetchPypi {
+        inherit pname version;
+        sha256 = "sha256-WswSb6Xd1uw5XM2cdylUXpHYXrsvWxfpq4jjPWkl9QE=";
+      };
+      doCheck = false;
+    }
+    )
+
+
