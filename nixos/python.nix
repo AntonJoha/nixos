@@ -11,7 +11,8 @@
       flask
       pillow
       tkinter
-
+      networkx
+      termcolor
    ]))
   ];
 
