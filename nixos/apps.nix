@@ -44,7 +44,7 @@ nixpkgs.config = {
     networkmanagerapplet
     element-desktop
     steam
-    obsidian
+    slack
  ];
 
 
