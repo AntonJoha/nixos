@@ -7,9 +7,11 @@
    [ 
       numpy
       jedi
-      mininet-python
       pyqt5
-      networkx
+      flask
+      pillow
+      tkinter
+
    ]))
   ];
 

@@ -45,6 +45,9 @@ nixpkgs.config = {
     element-desktop
     steam
     obsidian
+    prismlauncher
+    python310Packages.tkinter
+    zoom-us
  ];
 
 
