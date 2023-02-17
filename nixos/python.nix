@@ -14,6 +14,7 @@
       networkx
       termcolor
       jupyter
+      requests
    ]))
   ];
 
