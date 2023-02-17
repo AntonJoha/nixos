@@ -13,6 +13,7 @@
       tkinter
       networkx
       termcolor
+      jupyter
    ]))
   ];
 
