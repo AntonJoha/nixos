@@ -15,6 +15,9 @@
       termcolor
       jupyter
       requests
+      pandas
+      matplotlib
+      torch
    ]))
   ];
 
