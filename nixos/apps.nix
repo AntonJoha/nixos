@@ -48,6 +48,7 @@ nixpkgs.config = {
     obsidian
     prismlauncher
     python310Packages.tkinter
+    fortune
     zoom-us
  ];
 

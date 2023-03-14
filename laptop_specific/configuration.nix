@@ -12,8 +12,8 @@
       ./nixos/nvim.nix
       ./nixos/apps.nix
       ./nixos/python.nix
-      ./nixos/work.nix
       ./nixos/cronjob.nix
+      ./nixos/work.nix
     ];
 
 

@@ -8,7 +8,7 @@
    kubernetes
    go
    docker
-   openvpn3
+   openvpn
  ];
 
 virtualisation.docker.enable = true;

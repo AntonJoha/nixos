@@ -1,4 +1,4 @@
 alias vim="nvim"
 
-export PATH=/home/kentagent/nixos/helper-scripts:$PATH
+export PATH=/home/kentagent/.cargo/bin/:/home/kentagent/nixos/helper-scripts:$PATH
 export KUBECONFIG=~/.kube/config
