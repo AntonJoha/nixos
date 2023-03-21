@@ -50,6 +50,7 @@ nixpkgs.config = {
     python310Packages.tkinter
     fortune
     zoom-us
+    plan9port
  ];
 
 
@@ -65,7 +66,7 @@ documentation.dev.enable = true;
 
 programs.steam = {
   enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
 
