@@ -18,6 +18,7 @@
       pandas
       matplotlib
       torch
+      kafka-python
    ]))
   ];
 
