@@ -45,12 +45,12 @@ nixpkgs.config = {
     element-desktop
     steam
     slack
-    obsidian
     prismlauncher
     python310Packages.tkinter
     fortune
     zoom-us
-    plan9port
+    eclipses.eclipse-java
+    eclipses.eclipse-platform
  ];
 
 

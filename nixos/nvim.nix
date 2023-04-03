@@ -21,7 +21,7 @@ nixpkgs.overlays = [
 
   environment.systemPackages = with pkgs; [
     
-    nodejs
+    nodejs-14_x
     clang-tools
     (neovim.override {
       vimAlias = true;

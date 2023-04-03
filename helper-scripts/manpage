@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+res=$(echo ""| dmenu -p "What page do you want?")
+
+man -t $res | ps2pdf - - | zathura - &
