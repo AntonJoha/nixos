@@ -51,6 +51,8 @@ nixpkgs.config = {
     zoom-us
     eclipses.eclipse-java
     eclipses.eclipse-platform
+
+    gradle
  ];
 
 
