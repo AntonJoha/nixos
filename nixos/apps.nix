@@ -53,6 +53,7 @@ nixpkgs.config = {
     eclipses.eclipse-platform
 
     gradle
+    zotero
  ];
 
 

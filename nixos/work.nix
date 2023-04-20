@@ -6,6 +6,7 @@
    kind
    kubernetes-helm
    kubernetes
+   minikube
    go
    docker
    openvpn
