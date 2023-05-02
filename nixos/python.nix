@@ -19,7 +19,8 @@
       matplotlib
       torch
       kafka-python
-   ]))
+      pyqt5
+    ]))
   ];
 
 }

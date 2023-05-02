@@ -71,7 +71,7 @@ services.blueman.enable = true;
   users.users.kentagent = {
     isNormalUser = true;
     description = "kentagent";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "netdev" "network" ];
     packages = with pkgs; [];
   };
 
@@ -138,7 +138,7 @@ programs.light.enable = true;
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 4200 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
