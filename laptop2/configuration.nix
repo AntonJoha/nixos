@@ -84,6 +84,7 @@ services.blueman.enable = true;
    # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 git
 firefox
+nginx
   #  wget
   ];
 
@@ -123,6 +124,23 @@ programs.light.enable = true;
   };
 
 
+  services.nginx.appendConfig = ''
+  stream {
+    server {
+      listen 4200;
+      proxy_pass 192.168.49.2:32005;
+    }
+    server {
+      listen 7000;
+      proxy_pass 192.168.49.2:32000;
+    }
+    server {
+      listen 7001;
+      proxy_pass 192.168.49.2:32001;
+    }
+  }
+  '';
+services.nginx.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -138,7 +156,7 @@ programs.light.enable = true;
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 4200 ];
+  networking.firewall.allowedTCPPorts = [ 4200 7000 7001];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
