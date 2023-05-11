@@ -54,6 +54,8 @@ nixpkgs.config = {
 
     gradle
     zotero
+
+    jekyll
  ];
 
 
