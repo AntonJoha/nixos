@@ -8,3 +8,4 @@ text = text.split('<url>')[1]
 text = text.split('</url>')[0]
 
 url = 'www.bing.com' + text
+print(url)
