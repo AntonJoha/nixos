@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
-
-echo "Taking screenshot..." > /tmp/screenshot.log
-
 time=~/Pictures/$(date +%F.%T).png
 import $time
