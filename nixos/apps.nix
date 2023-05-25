@@ -14,7 +14,6 @@ nixpkgs.config = {
 	feh
 	texlive.combined.scheme-full
 	gcc
-	cargo
     rustup
 	discord
 	pkgs.man-pages
