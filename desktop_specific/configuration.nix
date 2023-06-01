@@ -19,6 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -98,6 +99,15 @@ services.xserver.libinput.enable = true;
     ];
     initialPassword = "pass";
  };
+ users.users.elsa = {
+   isNormalUser = true;
+   packages = with pkgs; [
+     firefox
+    ];
+    initialPassword = "pass";
+ };
+
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
