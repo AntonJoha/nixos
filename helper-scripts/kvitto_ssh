@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-scp $1 kentagent@$SERVER:/tmp/kvittofil
-ssh kentagent@$SERVER " kvitto -f /tmp/kvittofil"
+kvitto -f $1 -o  /tmp/kvitto  -c
+scp /tmp/kvitto pi@$SERVER:/tmp/kvittofil
+ssh pi@$SERVER " kvitto -f /tmp/kvittofil" 
