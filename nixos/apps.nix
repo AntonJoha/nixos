@@ -36,7 +36,7 @@ nixpkgs.config = {
     unrar
     imagemagick
     gnupg
-    pinentry
+    pinentry-qt
     dict
     libnotify
     tut
