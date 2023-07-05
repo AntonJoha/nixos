@@ -23,6 +23,7 @@ nixpkgs.overlays = [
     
     nodejs-16_x
     clang-tools
+    universal-ctags
     (neovim.override {
       vimAlias = true;
       configure = {
@@ -30,8 +31,10 @@ nixpkgs.overlays = [
           start = [ vim-lastplace
           vim-nix
           vim-airline
+          rust-vim
           nvim-lspconfig
           nvim-treesitter
+          vim-gutentags
           coc-nvim
           coc-rust-analyzer
           coc-clangd
@@ -42,6 +45,7 @@ nixpkgs.overlays = [
           nord-nvim
           copilot-vim
           vimwiki
+          vim-fugitive
         ]; 
           opt = [];
         };
@@ -67,9 +71,14 @@ nixpkgs.overlays = [
           hi Pmenu guibg=grey
 
 
+          let g:rustfmt_autosave = 1
 
           "Remapping for the terminal command to allow <ESC> instead of \N combination
           tnoremap <Esc> <C-\><C-n><CR>
+
+          lua <<EOF
+            vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+          EOF
 
           " ...
         '';

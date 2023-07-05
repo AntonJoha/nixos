@@ -48,13 +48,13 @@ nixpkgs.config = {
     python310Packages.tkinter
     fortune
     zoom-us
-    eclipses.eclipse-java
-    eclipses.eclipse-platform
 
     gradle
     zotero
 
     jekyll
+
+    qmk
  ];
 
 
