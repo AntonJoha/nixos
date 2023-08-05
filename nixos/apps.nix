@@ -55,6 +55,8 @@ nixpkgs.config = {
     jekyll
 
     qmk
+
+    whatsapp-for-linux
  ];
 
 

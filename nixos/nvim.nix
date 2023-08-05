@@ -24,6 +24,7 @@ nixpkgs.overlays = [
     nodejs-16_x
     clang-tools
     universal-ctags
+    ranger
     (neovim.override {
       vimAlias = true;
       configure = {
@@ -46,6 +47,9 @@ nixpkgs.overlays = [
           copilot-vim
           vimwiki
           vim-fugitive
+          vim-gitgutter
+          tagbar
+          ranger-vim
         ]; 
           opt = [];
         };
@@ -70,6 +74,9 @@ nixpkgs.overlays = [
           colorscheme evening
           hi Pmenu guibg=grey
 
+          " Tagbar
+          autocmd VimEnter * nested :call tagbar#autoopen(1)
+          autocmd FileType * nested :call tagbar#autoopen(0)
 
           let g:rustfmt_autosave = 1
 
