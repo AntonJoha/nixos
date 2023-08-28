@@ -57,6 +57,8 @@ nixpkgs.config = {
     qmk
 
     whatsapp-for-linux
+    cmake
+
  ];
 
 
