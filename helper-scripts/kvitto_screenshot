@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+time=/tmp/$(date +%F.%T).png
+import $time
+/home/kentagent/.cargo/bin/kvitto -i $time

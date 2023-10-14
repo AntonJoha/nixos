@@ -20,6 +20,8 @@
       torch
       kafka-python
       pyqt5
+      pytest
+      flake8
     ]))
   ];
 

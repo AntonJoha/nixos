@@ -50,6 +50,7 @@ nixpkgs.overlays = [
           vim-gitgutter
           tagbar
           ranger-vim
+          neoformat
         ]; 
           opt = [];
         };
@@ -73,6 +74,15 @@ nixpkgs.overlays = [
           colorscheme nord
           colorscheme evening
           hi Pmenu guibg=grey
+
+          " Enable alignment
+          let g:neoformat_basic_format_align = 1
+
+          " Enable tab to space conversion
+          let g:neoformat_basic_format_retab = 1
+
+          " Enable trimmming of trailing whitespace
+          let g:neoformat_basic_format_trim = 1
 
           " Tagbar
           autocmd VimEnter * nested :call tagbar#autoopen(1)

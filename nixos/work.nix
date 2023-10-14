@@ -10,6 +10,7 @@
    go
    docker
    openvpn
+   eclipses.eclipse-sdk
  ];
 
 virtualisation.docker.enable = true;

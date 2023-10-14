@@ -1,0 +1,348 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/kentagent/nixos/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+BEGIN	helper-scripts/bingimage_src/lex.c	/^#define BEGIN /;"	d	file:
+CHAR	helper-scripts/bingimage_src/lex.l	/^CHAR [a-z]+$/;"	r
+ECHO	helper-scripts/bingimage_src/lex.c	/^#define ECHO /;"	d	file:
+ECHO	helper-scripts/bingimage_src/lex.c	/^ECHO;$/;"	v	typeref:typename:YY_RULE_SETUP
+EOB_ACT_CONTINUE_SCAN	helper-scripts/bingimage_src/lex.c	/^#define EOB_ACT_CONTINUE_SCAN /;"	d	file:
+EOB_ACT_END_OF_FILE	helper-scripts/bingimage_src/lex.c	/^#define EOB_ACT_END_OF_FILE /;"	d	file:
+EOB_ACT_LAST_MATCH	helper-scripts/bingimage_src/lex.c	/^#define EOB_ACT_LAST_MATCH /;"	d	file:
+FLEXINT_H	helper-scripts/bingimage_src/lex.c	/^#define FLEXINT_H$/;"	d	file:
+FLEX_BETA	helper-scripts/bingimage_src/lex.c	/^#define FLEX_BETA$/;"	d	file:
+FLEX_SCANNER	helper-scripts/bingimage_src/lex.c	/^#define FLEX_SCANNER$/;"	d	file:
+INITIAL	helper-scripts/bingimage_src/lex.c	/^#define INITIAL /;"	d	file:
+INT16_MAX	helper-scripts/bingimage_src/lex.c	/^#define INT16_MAX /;"	d	file:
+INT16_MIN	helper-scripts/bingimage_src/lex.c	/^#define INT16_MIN /;"	d	file:
+INT32_MAX	helper-scripts/bingimage_src/lex.c	/^#define INT32_MAX /;"	d	file:
+INT32_MIN	helper-scripts/bingimage_src/lex.c	/^#define INT32_MIN /;"	d	file:
+INT8_MAX	helper-scripts/bingimage_src/lex.c	/^#define INT8_MAX /;"	d	file:
+INT8_MIN	helper-scripts/bingimage_src/lex.c	/^#define INT8_MIN /;"	d	file:
+INTEGER	helper-scripts/bingimage_src/lex.l	/^INTEGER [0-9]+$/;"	r
+REJECT	helper-scripts/bingimage_src/lex.c	/^#define REJECT /;"	d	file:
+SIZE_MAX	helper-scripts/bingimage_src/lex.c	/^#define SIZE_MAX /;"	d	file:
+UINT16_MAX	helper-scripts/bingimage_src/lex.c	/^#define UINT16_MAX /;"	d	file:
+UINT32_MAX	helper-scripts/bingimage_src/lex.c	/^#define UINT32_MAX /;"	d	file:
+UINT8_MAX	helper-scripts/bingimage_src/lex.c	/^#define UINT8_MAX /;"	d	file:
+YYSTATE	helper-scripts/bingimage_src/lex.c	/^#define YYSTATE /;"	d	file:
+YYTABLES_NAME	helper-scripts/bingimage_src/lex.c	/^#define YYTABLES_NAME /;"	d	file:
+YY_AT_BOL	helper-scripts/bingimage_src/lex.c	/^#define YY_AT_BOL(/;"	d	file:
+YY_BREAK	helper-scripts/bingimage_src/lex.c	/^#define YY_BREAK /;"	d	file:
+YY_BUFFER_EOF_PENDING	helper-scripts/bingimage_src/lex.c	/^#define YY_BUFFER_EOF_PENDING /;"	d	file:
+YY_BUFFER_NEW	helper-scripts/bingimage_src/lex.c	/^#define YY_BUFFER_NEW /;"	d	file:
+YY_BUFFER_NORMAL	helper-scripts/bingimage_src/lex.c	/^#define YY_BUFFER_NORMAL /;"	d	file:
+YY_BUFFER_STATE	helper-scripts/bingimage_src/lex.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state *	file:
+YY_BUF_SIZE	helper-scripts/bingimage_src/lex.c	/^#define YY_BUF_SIZE /;"	d	file:
+YY_CHAR	helper-scripts/bingimage_src/lex.c	/^typedef flex_uint8_t YY_CHAR;$/;"	t	typeref:typename:flex_uint8_t	file:
+YY_CURRENT_BUFFER	helper-scripts/bingimage_src/lex.c	/^#define YY_CURRENT_BUFFER /;"	d	file:
+YY_CURRENT_BUFFER_LVALUE	helper-scripts/bingimage_src/lex.c	/^#define YY_CURRENT_BUFFER_LVALUE /;"	d	file:
+YY_DECL	helper-scripts/bingimage_src/lex.c	/^#define YY_DECL /;"	d	file:
+YY_DECL_IS_OURS	helper-scripts/bingimage_src/lex.c	/^#define YY_DECL_IS_OURS /;"	d	file:
+YY_DO_BEFORE_ACTION	helper-scripts/bingimage_src/lex.c	/^#define YY_DO_BEFORE_ACTION /;"	d	file:
+YY_END_OF_BUFFER	helper-scripts/bingimage_src/lex.c	/^#define YY_END_OF_BUFFER /;"	d	file:
+YY_END_OF_BUFFER_CHAR	helper-scripts/bingimage_src/lex.c	/^#define YY_END_OF_BUFFER_CHAR /;"	d	file:
+YY_EXIT_FAILURE	helper-scripts/bingimage_src/lex.c	/^#define YY_EXIT_FAILURE /;"	d	file:
+YY_EXTRA_TYPE	helper-scripts/bingimage_src/lex.c	/^#define YY_EXTRA_TYPE /;"	d	file:
+YY_FATAL_ERROR	helper-scripts/bingimage_src/lex.c	/^#define YY_FATAL_ERROR(/;"	d	file:
+YY_FLEX_MAJOR_VERSION	helper-scripts/bingimage_src/lex.c	/^#define YY_FLEX_MAJOR_VERSION /;"	d	file:
+YY_FLEX_MINOR_VERSION	helper-scripts/bingimage_src/lex.c	/^#define YY_FLEX_MINOR_VERSION /;"	d	file:
+YY_FLEX_SUBMINOR_VERSION	helper-scripts/bingimage_src/lex.c	/^#define YY_FLEX_SUBMINOR_VERSION /;"	d	file:
+YY_FLUSH_BUFFER	helper-scripts/bingimage_src/lex.c	/^#define YY_FLUSH_BUFFER /;"	d	file:
+YY_INPUT	helper-scripts/bingimage_src/lex.c	/^#define YY_INPUT(/;"	d	file:
+YY_INT_ALIGNED	helper-scripts/bingimage_src/lex.c	/^#define  YY_INT_ALIGNED /;"	d	file:
+YY_LESS_LINENO	helper-scripts/bingimage_src/lex.c	/^    #define YY_LESS_LINENO(/;"	d	file:
+YY_LINENO_REWIND_TO	helper-scripts/bingimage_src/lex.c	/^    #define YY_LINENO_REWIND_TO(/;"	d	file:
+YY_MORE_ADJ	helper-scripts/bingimage_src/lex.c	/^#define YY_MORE_ADJ /;"	d	file:
+YY_NEW_FILE	helper-scripts/bingimage_src/lex.c	/^#define YY_NEW_FILE /;"	d	file:
+YY_NO_INPUT	helper-scripts/bingimage_src/lex.c	/^#define YY_NO_INPUT /;"	d	file:
+YY_NULL	helper-scripts/bingimage_src/lex.c	/^#define YY_NULL /;"	d	file:
+YY_NUM_RULES	helper-scripts/bingimage_src/lex.c	/^#define YY_NUM_RULES /;"	d	file:
+YY_READ_BUF_SIZE	helper-scripts/bingimage_src/lex.c	/^#define YY_READ_BUF_SIZE /;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	helper-scripts/bingimage_src/lex.c	/^#define YY_RESTORE_YY_MORE_OFFSET$/;"	d	file:
+YY_RULE_SETUP	helper-scripts/bingimage_src/lex.c	/^#define YY_RULE_SETUP /;"	d	file:
+YY_SC_TO_UI	helper-scripts/bingimage_src/lex.c	/^#define YY_SC_TO_UI(/;"	d	file:
+YY_SKIP_YYWRAP	helper-scripts/bingimage_src/lex.c	/^#define YY_SKIP_YYWRAP$/;"	d	file:
+YY_START	helper-scripts/bingimage_src/lex.c	/^#define YY_START /;"	d	file:
+YY_START_STACK_INCR	helper-scripts/bingimage_src/lex.c	/^#define YY_START_STACK_INCR /;"	d	file:
+YY_STATE_BUF_SIZE	helper-scripts/bingimage_src/lex.c	/^#define YY_STATE_BUF_SIZE /;"	d	file:
+YY_STATE_EOF	helper-scripts/bingimage_src/lex.c	/^#define YY_STATE_EOF(/;"	d	file:
+YY_STRUCT_YY_BUFFER_STATE	helper-scripts/bingimage_src/lex.c	/^#define YY_STRUCT_YY_BUFFER_STATE$/;"	d	file:
+YY_TYPEDEF_YY_BUFFER_STATE	helper-scripts/bingimage_src/lex.c	/^#define YY_TYPEDEF_YY_BUFFER_STATE$/;"	d	file:
+YY_TYPEDEF_YY_SIZE_T	helper-scripts/bingimage_src/lex.c	/^#define YY_TYPEDEF_YY_SIZE_T$/;"	d	file:
+YY_USER_ACTION	helper-scripts/bingimage_src/lex.c	/^#define YY_USER_ACTION$/;"	d	file:
+__STDC_LIMIT_MACROS	helper-scripts/bingimage_src/lex.c	/^#define __STDC_LIMIT_MACROS /;"	d	file:
+add	tut/config.ini	/^media-add="[A]dd",'a','A'$/;"	k	section:input
+add	tut/config.ini	/^poll-add="[A]dd",'a','A'$/;"	k	section:input
+add	tut/config.ini	/^preference-fields-add="[A]dd",'a','A'$/;"	k	section:input
+auto	helper-scripts/screenz	/^function auto () {$/;"	f
+avatar	tut/config.ini	/^status-avatar="[A]vatar",'a','A'$/;"	k	section:input
+avatar	tut/config.ini	/^user-avatar="[A]vatar",'a','A'$/;"	k	section:input
+back	tut/config.ini	/^global-back="[Esc]","Esc"$/;"	k	section:input
+background	tut/config.ini	/^autocomplete-background=$/;"	k	section:style
+background	tut/config.ini	/^autocomplete-selected-background=$/;"	k	section:style
+background	tut/config.ini	/^background=$/;"	k	section:style
+background	tut/config.ini	/^list-selected-background=$/;"	k	section:style
+background	tut/config.ini	/^list-selected-inactive-background=$/;"	k	section:style
+background	tut/config.ini	/^status-bar-background=$/;"	k	section:style
+background	tut/config.ini	/^status-bar-view-background=$/;"	k	section:style
+background	tut/config.ini	/^timeline-name-background=$/;"	k	section:style
+background	tut/config.ini	/^top-bar-background=$/;"	k	section:style
+bio	tut/config.ini	/^preference-bio="[B]io",'b','B'$/;"	k	section:input
+block	tut/config.ini	/^user-block="[B]lock","Un[B]lock",'b','B'$/;"	k	section:input
+bookmark	tut/config.ini	/^status-bookmark="[S]ave","Un[S]ave",'s','S'$/;"	k	section:input
+boost	tut/config.ini	/^boost=false$/;"	k	section:desktop-notification
+boost	tut/config.ini	/^status-boost="[B]oost","Un[B]oost",'b','B'$/;"	k	section:input
+check_init	helper-scripts/screenz	/^function check_init() {$/;"	f
+choise	helper-scripts/screenz	/^function choise() {$/;"	f
+compose	tut/config.ini	/^main-compose="",'c','C'$/;"	k	section:input
+confirmation	tut/config.ini	/^confirmation=true$/;"	k	section:general
+decide	tut/config.ini	/^user-follow-request-decide="Follow [R]equest","Follow [R]equest",'r','R'$/;"	k	section:input
+delete	tut/config.ini	/^media-delete="[D]elete",'d','D'$/;"	k	section:input
+delete	tut/config.ini	/^poll-delete="[D]elete",'d','D'$/;"	k	section:input
+delete	tut/config.ini	/^preference-fields-delete="[D]elete",'d','D'$/;"	k	section:input
+delete	tut/config.ini	/^status-delete="[D]elete",'d','D'$/;"	k	section:input
+desc	tut/config.ini	/^media-edit-desc="[E]dit desc",'e','E'$/;"	k	section:input
+desktop-notification	tut/config.ini	/^[desktop-notification]$/;"	s
+down	tut/config.ini	/^global-down="",'j','J',"Down"$/;"	k	section:input
+edit	tut/config.ini	/^poll-edit="[E]dit",'e','E'$/;"	k	section:input
+edit	tut/config.ini	/^preference-fields-edit="[E]dit",'e','E'$/;"	k	section:input
+end	tut/config.ini	/^main-end="",'G',"End"$/;"	k	section:input
+enter	tut/config.ini	/^global-enter="","Enter"$/;"	k	section:input
+exit	tut/config.ini	/^global-exit="[Q]uit",'q','Q'$/;"	k	section:input
+expiration	tut/config.ini	/^poll-expiration="E[X]pires",'x','X'$/;"	k	section:input
+favorite	tut/config.ini	/^favorite=false$/;"	k	section:desktop-notification
+favorite	tut/config.ini	/^status-favorite="[F]avorite","Un[F]avorite",'f','F'$/;"	k	section:input
+feed	tut/config.ini	/^list-open-feed="[O]pen",'o','O'$/;"	k	section:input
+feed	tut/config.ini	/^main-next-feed="",'l','L',"Right"$/;"	k	section:input
+feed	tut/config.ini	/^main-prev-feed="",'h','H',"Left"$/;"	k	section:input
+fields	tut/config.ini	/^preference-fields="[F]ields",'f','F'$/;"	k	section:input
+flex_int16_t	helper-scripts/bingimage_src/lex.c	/^typedef int16_t flex_int16_t;$/;"	t	typeref:typename:int16_t	file:
+flex_int16_t	helper-scripts/bingimage_src/lex.c	/^typedef short int flex_int16_t;$/;"	t	typeref:typename:short int	file:
+flex_int32_t	helper-scripts/bingimage_src/lex.c	/^typedef int flex_int32_t;$/;"	t	typeref:typename:int	file:
+flex_int32_t	helper-scripts/bingimage_src/lex.c	/^typedef int32_t flex_int32_t;$/;"	t	typeref:typename:int32_t	file:
+flex_int8_t	helper-scripts/bingimage_src/lex.c	/^typedef int8_t flex_int8_t;$/;"	t	typeref:typename:int8_t	file:
+flex_int8_t	helper-scripts/bingimage_src/lex.c	/^typedef signed char flex_int8_t;$/;"	t	typeref:typename:signed char	file:
+flex_uint16_t	helper-scripts/bingimage_src/lex.c	/^typedef uint16_t flex_uint16_t;$/;"	t	typeref:typename:uint16_t	file:
+flex_uint16_t	helper-scripts/bingimage_src/lex.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	typeref:typename:unsigned short int	file:
+flex_uint32_t	helper-scripts/bingimage_src/lex.c	/^typedef uint32_t flex_uint32_t;$/;"	t	typeref:typename:uint32_t	file:
+flex_uint32_t	helper-scripts/bingimage_src/lex.c	/^typedef unsigned int flex_uint32_t;$/;"	t	typeref:typename:unsigned int	file:
+flex_uint8_t	helper-scripts/bingimage_src/lex.c	/^typedef uint8_t flex_uint8_t;$/;"	t	typeref:typename:uint8_t	file:
+flex_uint8_t	helper-scripts/bingimage_src/lex.c	/^typedef unsigned char flex_uint8_t; $/;"	t	typeref:typename:unsigned char	file:
+focus	tut/config.ini	/^compose-media-focus="[M]edia",'m','M'$/;"	k	section:input
+focus	tut/config.ini	/^main-notification-focus="[N]otifications",'n','N'$/;"	k	section:input
+focus	tut/config.ini	/^status-view-focus="[V]iew",'v','V'$/;"	k	section:input
+focus	tut/config.ini	/^user-view-focus="[V]iew",'v','V'$/;"	k	section:input
+follow	tut/config.ini	/^user-follow="[F]ollow","Un[F]ollow",'f','F'$/;"	k	section:input
+followers	tut/config.ini	/^followers=false$/;"	k	section:desktop-notification
+format	tut/config.ini	/^date-format=2006-01-02 15:04$/;"	k	section:general
+format	tut/config.ini	/^date-today-format=15:04$/;"	k	section:general
+general	tut/config.ini	/^[general]$/;"	s
+help	helper-scripts/screenz	/^function help() {$/;"	f
+help	tut/config.ini	/^show-help=true$/;"	k	section:general
+highlight	tut/config.ini	/^controls-highlight=$/;"	k	section:style
+hints	tut/config.ini	/^short-hints=false$/;"	k	section:general
+home	tut/config.ini	/^main-home="",'g',"Home"$/;"	k	section:input
+icons	tut/config.ini	/^show-icons=true$/;"	k	section:general
+init	helper-scripts/screenz	/^function init() {$/;"	f
+input	tut/config.ini	/^[input]$/;"	s
+key	tut/config.ini	/^leader-key=$/;"	k	section:general
+lex	helper-scripts/bingimage_src/Makefile	/^lex: lex.o$/;"	t
+lex.o	helper-scripts/bingimage_src/Makefile	/^lex.o: lex.l$/;"	t
+limit	tut/config.ini	/^char-limit=11000$/;"	k	section:general
+links	tut/config.ini	/^status-links="[O]pen",'o','O'$/;"	k	section:input
+links	tut/config.ini	/^user-links="[O]pen",'o','O'$/;"	k	section:input
+main	helper-scripts/bingimage_src/lex.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+media	tut/config.ini	/^[media]$/;"	s
+media	tut/config.ini	/^status-media="[M]edia",'m','M'$/;"	k	section:input
+mention	tut/config.ini	/^mention=false$/;"	k	section:desktop-notification
+mute	tut/config.ini	/^user-mute="[M]ute","Un[M]ute",'m','M'$/;"	k	section:input
+name	tut/config.ini	/^preference-name="[N]ame",'n','N'$/;"	k	section:input
+one	tut/config.ini	/^button-color-one=$/;"	k	section:style
+one	tut/config.ini	/^text-special-one=$/;"	k	section:style
+open	tut/config.ini	/^link-open="[O]pen",'o','O'$/;"	k	section:input
+open-custom	tut/config.ini	/^[open-custom]$/;"	s
+open-pattern	tut/config.ini	/^[open-pattern]$/;"	s
+phrase	tut/config.ini	/^show-filter-phrase=true$/;"	k	section:general
+placement	tut/config.ini	/^list-placement=left$/;"	k	section:general
+poll	tut/config.ini	/^compose-poll="P[O]ll",'o','O'$/;"	k	section:input
+poll	tut/config.ini	/^poll=false$/;"	k	section:desktop-notification
+poll	tut/config.ini	/^status-poll="[P]oll",'p','P'$/;"	k	section:input
+post	tut/config.ini	/^compose-post="[P]ost",'p','P'$/;"	k	section:input
+posts	tut/config.ini	/^posts=false$/;"	k	section:desktop-notification
+prefix	tut/config.ini	/^xrdb-prefix=guess$/;"	k	section:style
+proportion	tut/config.ini	/^content-proportion=2$/;"	k	section:general
+proportion	tut/config.ini	/^list-proportion=1$/;"	k	section:general
+quote	tut/config.ini	/^compose-include-quote="[I]nclude quote",'i','I'$/;"	k	section:input
+r	helper-scripts/bingimage	/^r = requests.get('https:\/\/www.bing.com\/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=sv-se')$/;"	v
+r	helper-scripts/bingimage_src/bing	/^r = requests.get('https:\/\/www.bing.com\/HPImageArchive.aspx?format=xml&idx=0&n=1&mkt=sv-se')$/;"	v
+relative	tut/config.ini	/^date-relative=-1$/;"	k	section:general
+reply	tut/config.ini	/^quote-reply=false$/;"	k	section:general
+reply	tut/config.ini	/^status-reply="[R]eply",'r','R'$/;"	k	section:input
+reverse	tut/config.ini	/^audio-reverse=false$/;"	k	section:media
+reverse	tut/config.ini	/^image-reverse=false$/;"	k	section:media
+reverse	tut/config.ini	/^video-reverse=false$/;"	k	section:media
+save	tut/config.ini	/^preference-save="[S]ave",'s','S'$/;"	k	section:input
+select	tut/config.ini	/^vote-select="[Enter] to select",' ', "Enter"$/;"	k	section:input
+single	tut/config.ini	/^audio-single=true$/;"	k	section:media
+single	tut/config.ini	/^image-single=true$/;"	k	section:media
+single	tut/config.ini	/^video-single=true$/;"	k	section:media
+split	tut/config.ini	/^list-split=row$/;"	k	section:general
+spoiler	tut/config.ini	/^compose-edit-spoiler="[C]W text",'c','C'$/;"	k	section:input
+spoiler	tut/config.ini	/^status-toggle-spoiler="Press [Z] to toggle spoiler",'z','Z'$/;"	k	section:input
+style	tut/config.ini	/^[style]$/;"	s
+subtle	tut/config.ini	/^subtle=$/;"	k	section:style
+support	tut/config.ini	/^mouse-support=false$/;"	k	section:general
+terminal	tut/config.ini	/^audio-terminal=false$/;"	k	section:media
+terminal	tut/config.ini	/^image-terminal=false$/;"	k	section:media
+terminal	tut/config.ini	/^link-terminal=false$/;"	k	section:media
+terminal	tut/config.ini	/^video-terminal=false$/;"	k	section:media
+text	helper-scripts/bingimage	/^text = r.text$/;"	v
+text	helper-scripts/bingimage	/^text = text.split('<\/url>')[0]$/;"	v
+text	helper-scripts/bingimage	/^text = text.split('<url>')[1]$/;"	v
+text	helper-scripts/bingimage_src/bing	/^text = r.text$/;"	v
+text	helper-scripts/bingimage_src/bing	/^text = text.split('<\/url>')[0]$/;"	v
+text	helper-scripts/bingimage_src/bing	/^text = text.split('<url>')[1]$/;"	v
+text	tut/config.ini	/^autocomplete-selected-text=$/;"	k	section:style
+text	tut/config.ini	/^autocomplete-text=$/;"	k	section:style
+text	tut/config.ini	/^compose-edit-text="[E]dit text",'e','E'$/;"	k	section:input
+text	tut/config.ini	/^controls-text=$/;"	k	section:style
+text	tut/config.ini	/^list-selected-inactive-text=$/;"	k	section:style
+text	tut/config.ini	/^list-selected-text=$/;"	k	section:style
+text	tut/config.ini	/^status-bar-text=$/;"	k	section:style
+text	tut/config.ini	/^status-bar-view-text=$/;"	k	section:style
+text	tut/config.ini	/^text=$/;"	k	section:style
+text	tut/config.ini	/^timeline-name-text=$/;"	k	section:style
+text	tut/config.ini	/^top-bar-text=$/;"	k	section:style
+text	tut/config.ini	/^warning-text=$/;"	k	section:style
+theme	tut/config.ini	/^theme=nord$/;"	k	section:style
+thread	tut/config.ini	/^status-thread="[T]hread",'t','T'$/;"	k	section:input
+timeout	tut/config.ini	/^leader-timeout=1000$/;"	k	section:general
+title	tut/config.ini	/^terminal-title=0$/;"	k	section:general
+toggle	tut/config.ini	/^poll-multi-toggle="Toggle [M]ultiple",'m','M'$/;"	k	section:input
+two	tut/config.ini	/^button-color-two=$/;"	k	section:style
+two	tut/config.ini	/^text-special-two=$/;"	k	section:style
+ui	tut/config.ini	/^redraw-ui=true$/;"	k	section:general
+unput	helper-scripts/bingimage_src/lex.c	/^#define unput(/;"	d	file:
+up	tut/config.ini	/^global-up="",'k','K',"Up"$/;"	k	section:input
+url	helper-scripts/bingimage	/^url = 'www.bing.com' + text$/;"	v
+url	helper-scripts/bingimage_src/bing	/^url = 'www.bing.com' + text$/;"	v
+user	tut/config.ini	/^status-user="[U]ser",'u','U'$/;"	k	section:input
+user	tut/config.ini	/^user-user="[U]ser",'u','U'$/;"	k	section:input
+viewer	tut/config.ini	/^audio-viewer=xdg-open$/;"	k	section:media
+viewer	tut/config.ini	/^image-viewer=xdg-open$/;"	k	section:media
+viewer	tut/config.ini	/^link-viewer=xdg-open$/;"	k	section:media
+viewer	tut/config.ini	/^video-viewer=xdg-open$/;"	k	section:media
+visibility	tut/config.ini	/^compose-visibility="[V]isibility",'v','V'$/;"	k	section:input
+visibility	tut/config.ini	/^preference-visibility="[V]isibility",'v','V'$/;"	k	section:input
+vote	tut/config.ini	/^vote-vote="[V]ote",'v','V'$/;"	k	section:input
+warning	tut/config.ini	/^compose-toggle-content-warning="[T]oggle CW",'t','T'$/;"	k	section:input
+width	tut/config.ini	/^max-width=0$/;"	k	section:general
+window	tut/config.ini	/^main-next-window="","Tab"$/;"	k	section:input
+window	tut/config.ini	/^main-prev-window="","Backtab"$/;"	k	section:input
+yank	tut/config.ini	/^link-yank="[Y]ank",'y','Y'$/;"	k	section:input
+yank	tut/config.ini	/^status-yank="[Y]ank",'y','Y'$/;"	k	section:input
+yank	tut/config.ini	/^user-yank="[Y]ank",'y','Y'$/;"	k	section:input
+yy_accept	helper-scripts/bingimage_src/lex.c	/^static const flex_int16_t yy_accept[24] =$/;"	v	typeref:typename:const flex_int16_t[24]	file:
+yy_act	helper-scripts/bingimage_src/lex.c	/^	int yy_act;$/;"	v	typeref:typename:int
+yy_amount_of_matched_text	helper-scripts/bingimage_src/lex.c	/^		int yy_amount_of_matched_text = (int) (yy_cp - (yytext_ptr)) - 1;$/;"	v	typeref:typename:int
+yy_at_bol	helper-scripts/bingimage_src/lex.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_base	helper-scripts/bingimage_src/lex.c	/^static const flex_int16_t yy_base[27] =$/;"	v	typeref:typename:const flex_int16_t[27]	file:
+yy_bp	helper-scripts/bingimage_src/lex.c	/^	char *yy_cp, *yy_bp;$/;"	v	typeref:typename:char *
+yy_bs_column	helper-scripts/bingimage_src/lex.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_bs_lineno	helper-scripts/bingimage_src/lex.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_buf_pos	helper-scripts/bingimage_src/lex.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	typeref:typename:char *	file:
+yy_buf_size	helper-scripts/bingimage_src/lex.c	/^	int yy_buf_size;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_buffer_stack	helper-scripts/bingimage_src/lex.c	/^static YY_BUFFER_STATE * yy_buffer_stack = NULL; \/**< Stack as an array. *\/$/;"	v	typeref:typename:YY_BUFFER_STATE *	file:
+yy_buffer_stack_max	helper-scripts/bingimage_src/lex.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	typeref:typename:size_t	file:
+yy_buffer_stack_top	helper-scripts/bingimage_src/lex.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	typeref:typename:size_t	file:
+yy_buffer_state	helper-scripts/bingimage_src/lex.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_status	helper-scripts/bingimage_src/lex.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_c	helper-scripts/bingimage_src/lex.c	/^			YY_CHAR yy_c = yy_ec[YY_SC_TO_UI(*yy_cp)] ;$/;"	v	typeref:typename:YY_CHAR
+yy_c_buf_p	helper-scripts/bingimage_src/lex.c	/^static char *yy_c_buf_p = NULL;$/;"	v	typeref:typename:char *	file:
+yy_ch_buf	helper-scripts/bingimage_src/lex.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	typeref:typename:char *	file:
+yy_chk	helper-scripts/bingimage_src/lex.c	/^static const flex_int16_t yy_chk[51] =$/;"	v	typeref:typename:const flex_int16_t[51]	file:
+yy_cp	helper-scripts/bingimage_src/lex.c	/^	char *yy_cp, *yy_bp;$/;"	v	typeref:typename:char *
+yy_create_buffer	helper-scripts/bingimage_src/lex.c	/^    YY_BUFFER_STATE yy_create_buffer  (FILE * file, int  size )$/;"	f	typeref:typename:YY_BUFFER_STATE
+yy_current_state	helper-scripts/bingimage_src/lex.c	/^	yy_state_type yy_current_state;$/;"	v	typeref:typename:yy_state_type
+yy_def	helper-scripts/bingimage_src/lex.c	/^static const flex_int16_t yy_def[27] =$/;"	v	typeref:typename:const flex_int16_t[27]	file:
+yy_delete_buffer	helper-scripts/bingimage_src/lex.c	/^    void yy_delete_buffer (YY_BUFFER_STATE  b )$/;"	f	typeref:typename:void
+yy_did_buffer_switch_on_eof	helper-scripts/bingimage_src/lex.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	typeref:typename:int	file:
+yy_ec	helper-scripts/bingimage_src/lex.c	/^static const YY_CHAR yy_ec[256] =$/;"	v	typeref:typename:const YY_CHAR[256]	file:
+yy_fatal_error	helper-scripts/bingimage_src/lex.c	/^static void yynoreturn yy_fatal_error (const char* msg )$/;"	f	typeref:typename:void yynoreturn	file:
+yy_fill_buffer	helper-scripts/bingimage_src/lex.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_flex_debug	helper-scripts/bingimage_src/lex.c	/^int yy_flex_debug = 0;$/;"	v	typeref:typename:int
+yy_flex_strlen	helper-scripts/bingimage_src/lex.c	/^static int yy_flex_strlen (const char * s )$/;"	f	typeref:typename:int	file:
+yy_flex_strncpy	helper-scripts/bingimage_src/lex.c	/^static void yy_flex_strncpy (char* s1, const char * s2, int n )$/;"	f	typeref:typename:void	file:
+yy_flush_buffer	helper-scripts/bingimage_src/lex.c	/^    void yy_flush_buffer (YY_BUFFER_STATE  b )$/;"	f	typeref:typename:void
+yy_get_next_buffer	helper-scripts/bingimage_src/lex.c	/^static int yy_get_next_buffer (void)$/;"	f	typeref:typename:int	file:
+yy_get_previous_state	helper-scripts/bingimage_src/lex.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	typeref:typename:yy_state_type	file:
+yy_hold_char	helper-scripts/bingimage_src/lex.c	/^static char yy_hold_char;$/;"	v	typeref:typename:char	file:
+yy_init	helper-scripts/bingimage_src/lex.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	typeref:typename:int	file:
+yy_init_buffer	helper-scripts/bingimage_src/lex.c	/^    static void yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	typeref:typename:void	file:
+yy_init_globals	helper-scripts/bingimage_src/lex.c	/^static int yy_init_globals (void)$/;"	f	typeref:typename:int	file:
+yy_input_file	helper-scripts/bingimage_src/lex.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	typeref:typename:FILE *	file:
+yy_is_interactive	helper-scripts/bingimage_src/lex.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_is_our_buffer	helper-scripts/bingimage_src/lex.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_last_accepting_cpos	helper-scripts/bingimage_src/lex.c	/^static char *yy_last_accepting_cpos;$/;"	v	typeref:typename:char *	file:
+yy_last_accepting_state	helper-scripts/bingimage_src/lex.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	typeref:typename:yy_state_type	file:
+yy_load_buffer_state	helper-scripts/bingimage_src/lex.c	/^static void yy_load_buffer_state  (void)$/;"	f	typeref:typename:void	file:
+yy_meta	helper-scripts/bingimage_src/lex.c	/^static const YY_CHAR yy_meta[9] =$/;"	v	typeref:typename:const YY_CHAR[9]	file:
+yy_n_chars	helper-scripts/bingimage_src/lex.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	typeref:typename:int	file:
+yy_n_chars	helper-scripts/bingimage_src/lex.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	typeref:typename:int	file:
+yy_new_buffer	helper-scripts/bingimage_src/lex.c	/^#define yy_new_buffer /;"	d	file:
+yy_next_state	helper-scripts/bingimage_src/lex.c	/^			yy_state_type yy_next_state;$/;"	v	typeref:typename:yy_state_type
+yy_nxt	helper-scripts/bingimage_src/lex.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	typeref:typename:flex_int32_t	file:
+yy_nxt	helper-scripts/bingimage_src/lex.c	/^static const flex_int16_t yy_nxt[51] =$/;"	v	typeref:typename:const flex_int16_t[51]	file:
+yy_scan_buffer	helper-scripts/bingimage_src/lex.c	/^YY_BUFFER_STATE yy_scan_buffer  (char * base, yy_size_t  size )$/;"	f	typeref:typename:YY_BUFFER_STATE
+yy_scan_bytes	helper-scripts/bingimage_src/lex.c	/^YY_BUFFER_STATE yy_scan_bytes  (const char * yybytes, int  _yybytes_len )$/;"	f	typeref:typename:YY_BUFFER_STATE
+yy_scan_string	helper-scripts/bingimage_src/lex.c	/^YY_BUFFER_STATE yy_scan_string (const char * yystr )$/;"	f	typeref:typename:YY_BUFFER_STATE
+yy_set_bol	helper-scripts/bingimage_src/lex.c	/^#define yy_set_bol(/;"	d	file:
+yy_set_interactive	helper-scripts/bingimage_src/lex.c	/^#define yy_set_interactive(/;"	d	file:
+yy_size_t	helper-scripts/bingimage_src/lex.c	/^typedef size_t yy_size_t;$/;"	t	typeref:typename:size_t	file:
+yy_start	helper-scripts/bingimage_src/lex.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	typeref:typename:int	file:
+yy_state_type	helper-scripts/bingimage_src/lex.c	/^typedef int yy_state_type;$/;"	t	typeref:typename:int	file:
+yy_switch_to_buffer	helper-scripts/bingimage_src/lex.c	/^    void yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f	typeref:typename:void
+yy_trans_info	helper-scripts/bingimage_src/lex.c	/^struct yy_trans_info$/;"	s	file:
+yy_try_NUL_trans	helper-scripts/bingimage_src/lex.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	typeref:typename:yy_state_type	file:
+yy_verify	helper-scripts/bingimage_src/lex.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	typeref:typename:flex_int32_t	file:
+yyalloc	helper-scripts/bingimage_src/lex.c	/^void *yyalloc (yy_size_t  size )$/;"	f	typeref:typename:void *
+yyconst	helper-scripts/bingimage_src/lex.c	/^#define yyconst /;"	d	file:
+yyensure_buffer_stack	helper-scripts/bingimage_src/lex.c	/^static void yyensure_buffer_stack (void)$/;"	f	typeref:typename:void	file:
+yyfree	helper-scripts/bingimage_src/lex.c	/^void yyfree (void * ptr )$/;"	f	typeref:typename:void
+yyget_debug	helper-scripts/bingimage_src/lex.c	/^int yyget_debug  (void)$/;"	f	typeref:typename:int
+yyget_in	helper-scripts/bingimage_src/lex.c	/^FILE *yyget_in  (void)$/;"	f	typeref:typename:FILE *
+yyget_leng	helper-scripts/bingimage_src/lex.c	/^int yyget_leng  (void)$/;"	f	typeref:typename:int
+yyget_lineno	helper-scripts/bingimage_src/lex.c	/^int yyget_lineno  (void)$/;"	f	typeref:typename:int
+yyget_out	helper-scripts/bingimage_src/lex.c	/^FILE *yyget_out  (void)$/;"	f	typeref:typename:FILE *
+yyget_text	helper-scripts/bingimage_src/lex.c	/^char *yyget_text  (void)$/;"	f	typeref:typename:char *
+yyin	helper-scripts/bingimage_src/lex.c	/^FILE *yyin = NULL, *yyout = NULL;$/;"	v	typeref:typename:FILE *
+yyinput	helper-scripts/bingimage_src/lex.c	/^    static int yyinput (void)$/;"	f	typeref:typename:int	file:
+yyleng	helper-scripts/bingimage_src/lex.c	/^int yyleng;$/;"	v	typeref:typename:int
+yyless	helper-scripts/bingimage_src/lex.c	/^#define yyless(/;"	d	file:
+yylex_destroy	helper-scripts/bingimage_src/lex.c	/^int yylex_destroy  (void)$/;"	f	typeref:typename:int
+yylineno	helper-scripts/bingimage_src/lex.c	/^int yylineno = 1;$/;"	v	typeref:typename:int
+yymore	helper-scripts/bingimage_src/lex.c	/^#define yymore(/;"	d	file:
+yynoreturn	helper-scripts/bingimage_src/lex.c	/^#define yynoreturn /;"	d	file:
+yynoreturn	helper-scripts/bingimage_src/lex.c	/^#define yynoreturn$/;"	d	file:
+yyout	helper-scripts/bingimage_src/lex.c	/^FILE *yyin = NULL, *yyout = NULL;$/;"	v	typeref:typename:FILE *
+yypop_buffer_state	helper-scripts/bingimage_src/lex.c	/^void yypop_buffer_state (void)$/;"	f	typeref:typename:void
+yypush_buffer_state	helper-scripts/bingimage_src/lex.c	/^void yypush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f	typeref:typename:void
+yyrealloc	helper-scripts/bingimage_src/lex.c	/^void *yyrealloc  (void * ptr, yy_size_t  size )$/;"	f	typeref:typename:void *
+yyrestart	helper-scripts/bingimage_src/lex.c	/^    void yyrestart  (FILE * input_file )$/;"	f	typeref:typename:void
+yyset_debug	helper-scripts/bingimage_src/lex.c	/^void yyset_debug (int  _bdebug )$/;"	f	typeref:typename:void
+yyset_in	helper-scripts/bingimage_src/lex.c	/^void yyset_in (FILE *  _in_str )$/;"	f	typeref:typename:void
+yyset_lineno	helper-scripts/bingimage_src/lex.c	/^void yyset_lineno (int  _line_number )$/;"	f	typeref:typename:void
+yyset_out	helper-scripts/bingimage_src/lex.c	/^void yyset_out (FILE *  _out_str )$/;"	f	typeref:typename:void
+yyterminate	helper-scripts/bingimage_src/lex.c	/^#define yyterminate(/;"	d	file:
+yytext	helper-scripts/bingimage_src/lex.c	/^char *yytext;$/;"	v	typeref:typename:char *
+yytext_ptr	helper-scripts/bingimage_src/lex.c	/^#define yytext_ptr /;"	d	file:
+yyunput	helper-scripts/bingimage_src/lex.c	/^    static void yyunput (int c, char * yy_bp )$/;"	f	typeref:typename:void	file:
+yywrap	helper-scripts/bingimage_src/lex.c	/^#define yywrap(/;"	d	file:
