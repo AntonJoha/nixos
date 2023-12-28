@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 time=/tmp/$(date +%F.%T).png
 import $time
+
+(( $(identify -format '%w > %h' "$time") )) && convert "$time" -rotate 90 $time; 
+
+
 /home/kentagent/.cargo/bin/kvitto -i $time

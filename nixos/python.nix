@@ -21,6 +21,7 @@
       kafka-python
       pyqt5
       pytest
+      seaborn
       flake8
     ]))
   ];

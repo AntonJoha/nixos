@@ -5,6 +5,7 @@ nixpkgs.config = {
 	allowUnfree = true;
 };
 
+
  environment.systemPackages = with pkgs; [
     zathura
     wget
@@ -43,22 +44,25 @@ nixpkgs.config = {
     networkmanagerapplet
     element-desktop
     steam
+    steam-run
     slack
     prismlauncher
     python310Packages.tkinter
     fortune
     zoom-us
 
+    xdg-utils
+    xdg-user-dirs
+
     gradle
     zotero
 
     jekyll
-
     qmk
-
-    whatsapp-for-linux
     cmake
-
+    busybox
+    loc
+    conda
  ];
 
 
@@ -77,7 +81,9 @@ programs.steam = {
   remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
+hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
 
+environment.etc."dict.conf".text = "server dict.org";
 
 
    virtualisation.virtualbox.host.enable = true;

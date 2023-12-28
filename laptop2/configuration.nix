@@ -62,6 +62,7 @@ services.blueman.enable = true;
   services.xserver = {
     layout = "se";
     xkbVariant = "";
+    videoDrivers = [ "amdgpu"];
   };
 
   # Configure console keymap

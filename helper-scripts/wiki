@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+cd ~/vimwiki
+git pull
+
+vim -c VimwikiIndex
+
+git add .
+git commit -m "update"
+git push
+
+
