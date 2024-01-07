@@ -2,6 +2,7 @@
 
 #Clear the download folder on each boot. 
 rm -rf /home/kentagent/Downloads/*
+rm -rf /home/kentagent/Screenshots/*
 
 #Download picture of the day
 wget $(exec /home/kentagent/nixos/helper-scripts/bingimage) -O /home/kentagent/Downloads/img.png
