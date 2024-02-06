@@ -7,6 +7,12 @@
 {
   
 
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.7"
+  ];
+            
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -60,8 +66,8 @@ services.blueman.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "se";
-    xkbVariant = "";
+    xkb.layout = "se";
+    xkb.variant = "";
     videoDrivers = [ "amdgpu"];
   };
 

@@ -21,7 +21,6 @@ nixpkgs.overlays = [
 
   environment.systemPackages = with pkgs; [
     
-    nodejs-16_x
     clang-tools
     universal-ctags
     ranger

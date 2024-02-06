@@ -16,13 +16,10 @@ nixpkgs.config = {
 	texlive.combined.scheme-full
 	gcc
     rustup
-	discord
 	pkgs.man-pages
 	pkgs.man-pages-posix
 	nmap
 	xorg.xbacklight
-	tor-browser-bundle-bin
-	wireshark-qt
 	htop
 	iwd
 	gnumake
@@ -33,36 +30,28 @@ nixpkgs.config = {
 	bintools-unwrapped
 	virtualbox
     inetutils
-    openvswitch
     unrar
     imagemagick
     gnupg
     pinentry-qt
     dict
     libnotify
-    tut
     networkmanagerapplet
-    element-desktop
     steam
     steam-run
-    slack
     prismlauncher
-    python310Packages.tkinter
-    fortune
+
+    discord
     zoom-us
 
     xdg-utils
     xdg-user-dirs
-
-    gradle
     zotero
 
-    jekyll
-    qmk
     cmake
     busybox
-    loc
-    conda
+
+    ollama
  ];
 
 
