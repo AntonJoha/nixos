@@ -7,6 +7,7 @@ nixpkgs.config = {
 
 
  environment.systemPackages = with pkgs; [
+   google-chrome
     zathura
     wget
 	alacritty	
@@ -53,13 +54,6 @@ nixpkgs.config = {
 
     ollama
  ];
-
-
-programs.gnupg.agent = {
-   enable = true;
-   pinentryFlavor = "curses";
-   enableSSHSupport = true;
-};
 
 services.pcscd.enable = true;
 documentation.dev.enable = true;
