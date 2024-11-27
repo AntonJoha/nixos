@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ollama run schedule "$@" > /tmp/sched
+kvitto_ssh /tmp/sched

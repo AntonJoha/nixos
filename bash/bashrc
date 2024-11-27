@@ -1,5 +1,5 @@
 alias vim="nvim"
-export SERVER=83.248.201.67
+export SERVER=ssh.antonlinder.xyz
 
 export PATH=/home/kentagent/.cargo/bin/:/home/kentagent/nixos/helper-scripts:$PATH
 export KUBECONFIG=~/.kube/config

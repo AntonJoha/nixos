@@ -5,6 +5,8 @@
  environment.systemPackages = with pkgs; [
    (python311.withPackages(ps: with ps; 
    [ 
+     ics
+     ollama
       numpy
       jedi
       pillow
@@ -18,6 +20,11 @@
       pyqt5
       pytest
       seaborn
+      gymnasium
+      pygame
+      pybox2d
+      pylint
+      moviepy
     ]))
   ];
 

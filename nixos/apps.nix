@@ -7,6 +7,8 @@ nixpkgs.config = {
 
 
  environment.systemPackages = with pkgs; [
+   nodejs
+   pylint
    google-chrome
     zathura
     wget
@@ -44,7 +46,7 @@ nixpkgs.config = {
 
     discord
     zoom-us
-
+    edwood
     xdg-utils
     xdg-user-dirs
     zotero
@@ -53,6 +55,12 @@ nixpkgs.config = {
     busybox
 
     ollama
+
+
+    via
+    cloudflared
+
+    libreoffice
  ];
 
 services.pcscd.enable = true;
