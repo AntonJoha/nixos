@@ -8,11 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nixos/nvim.nix
-      ./nixos/apps.nix
-      ./nixos/python.nix
-      ./nixos/work.nix
-      ./nixos/cronjob.nix
+      ../nixos/nvim.nix
+      ../nixos/apps.nix
+      ../nixos/python.nix
+      ../nixos/work.nix
+      ../nixos/cronjob.nix
     ];
 
   # Bootloader.
@@ -33,10 +33,6 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
 
