@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 time=/tmp/$(date +%F.%T).png
-import $time
+import -silent $time
 
 (( $(identify -format '%w > %h' "$time") )) && magick convert "$time" -rotate 90 $time; 
 

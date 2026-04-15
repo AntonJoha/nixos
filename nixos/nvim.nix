@@ -17,7 +17,7 @@ nixpkgs.overlays = [
    })
  ];
 
-  environment.variables = { EDITOR = "vim"; };
+  environment.variables = { EDITOR = "nvim"; };
 
   environment.systemPackages = with pkgs; [
     
@@ -33,15 +33,14 @@ nixpkgs.overlays = [
           vim-airline
           rust-vim
           nvim-lspconfig
-          nvim-treesitter
+          nvim-treesitter.withAllGrammars
           vim-gutentags
           coc-nvim
           coc-rust-analyzer
           coc-clangd
           coc-vimtex
-          coc-go
           vimtex
-          coc-python
+          coc-pyright
           nord-nvim
           copilot-vim
           vimwiki
@@ -66,7 +65,6 @@ nixpkgs.overlays = [
           set shiftwidth=4
 
           set foldmethod=indent
-
           set number
           set relativenumber
           let g:tex_flavor = 'latex'
@@ -77,11 +75,16 @@ nixpkgs.overlays = [
           " Enable alignment
           let g:neoformat_basic_format_align = 1
 
+          let g:airline#extensions#coc#enabled = 1
+
+          let g:neoformat_enabled_python = ['autopep8']
+
           " Enable tab to space conversion
           let g:neoformat_basic_format_retab = 1
 
           " Enable trimmming of trailing whitespace
           let g:neoformat_basic_format_trim = 1
+
 
           " Tagbar
           autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -109,6 +112,7 @@ nixpkgs.overlays = [
       extraPythonPackages = p: with p;
       [
         jedi
+        autopep8
       ];
     }
   )];

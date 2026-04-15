@@ -9,6 +9,7 @@ nixpkgs.config = {
  environment.systemPackages = with pkgs; [
    nodejs
    pylint
+   ffmpeg
    google-chrome
     zathura
     wget
@@ -18,16 +19,14 @@ nixpkgs.config = {
 	feh
 	texlive.combined.scheme-full
 	gcc
-    rustup
 	pkgs.man-pages
 	pkgs.man-pages-posix
 	nmap
-	xorg.xbacklight
 	htop
 	iwd
 	gnumake
 	dunst
-	python
+	python3
 	zip
 	unzip
 	bintools-unwrapped
@@ -61,6 +60,18 @@ nixpkgs.config = {
     cloudflared
 
     libreoffice
+
+    scrcpy
+
+    slack
+
+    gimp
+
+    restream
+    newsboat
+
+    whatsapp-electron
+    (vale.withStyles (s: [ s.alex s.google s.write-good s.proselint]))
  ];
 
 services.pcscd.enable = true;
@@ -72,7 +83,7 @@ programs.steam = {
   remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
-hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
+hardware.graphics.enable32Bit = true; # Enables support for 32bit libs that steam uses
 
 environment.etc."dict.conf".text = "server dict.org";
 

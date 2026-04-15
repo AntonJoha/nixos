@@ -3,10 +3,10 @@
 
 
  environment.systemPackages = with pkgs; [
-   (python311.withPackages(ps: with ps; 
+   (python313.withPackages(ps: with ps; 
    [ 
-     ics
      ollama
+     pyppeteer
       numpy
       jedi
       pillow
@@ -25,6 +25,16 @@
       pybox2d
       pylint
       moviepy
+      bsuite
+      torchvision
+      (opencv4.override { enableGtk3 = true; })
+      smolagents
+      h5py
+
+      playwright
+
+      beautifulsoup4
+
     ]))
   ];
 
