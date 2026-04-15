@@ -9,11 +9,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nixos/nvim.nix
-      ./nixos/apps.nix
-      ./nixos/python.nix
-      ./nixos/cronjob.nix
-      ./nixos/work.nix
+      ../nixos/nvim.nix
+      ../nixos/apps.nix
+      ../nixos/python.nix
+      ../nixos/cronjob.nix
+      ../nixos/work.nix
     ];
 
 
