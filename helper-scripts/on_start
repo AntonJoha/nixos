@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-#Clear the download folder on each boot. 
+#Clear the download folder on each boot.
 rm -rf /home/kentagent/Downloads/*
 rm -rf /home/kentagent/Screenshots/*
 
 #Download picture of the day
-wget $(exec /home/kentagent/nixos/helper-scripts/bingimage) -O /home/kentagent/Downloads/img.png
+bingimage_url="$("/home/kentagent/nixos/helper-scripts/bingimage")"
+wget "$bingimage_url" -O /home/kentagent/Downloads/img.png
 feh --bg-center /home/kentagent/Downloads/img.png
 
-#Start the notification deamon
+#Start the notification daemon
 dunst &
 
 notify-send "Startup done"

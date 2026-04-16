@@ -5,7 +5,6 @@ nixpkgs.config = {
 	allowUnfree = true;
 };
 
-
  environment.systemPackages = with pkgs; [
    nodejs
    pylint
@@ -13,7 +12,7 @@ nixpkgs.config = {
    google-chrome
     zathura
     wget
-	alacritty	
+	alacritty
 	git
 	mpv
 	feh
@@ -55,7 +54,6 @@ nixpkgs.config = {
 
     ollama
 
-
     via
     cloudflared
 
@@ -82,7 +80,6 @@ nixpkgs.config = {
 services.pcscd.enable = true;
 documentation.dev.enable = true;
 
-
 programs.steam = {
   enable = true;
   remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
@@ -92,10 +89,7 @@ hardware.graphics.enable32Bit = true; # Enables support for 32bit libs that stea
 
 environment.etc."dict.conf".text = "server dict.org";
 
-
    virtualisation.virtualbox.host.enable = true;
    users.extraGroups.vboxusers.members = [ "kentagent" ];
 
 }
-
-

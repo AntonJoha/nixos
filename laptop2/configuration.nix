@@ -5,13 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  
-
 
   nixpkgs.config.permittedInsecurePackages = [
     "python-2.7.18.7"
   ];
-            
 
   imports =
     [ # Include the results of the hardware scan.
@@ -22,8 +19,6 @@
       ../nixos/cronjob.nix
       ../nixos/work.nix
     ];
-
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -43,8 +38,6 @@ networking.wireless.userControlled.enable = true;
 networking.wireless.userControlled.group = "network";
 hardware.bluetooth.enable = true;
 services.blueman.enable = true;
-
-
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -95,7 +88,6 @@ nginx
   #  wget
   ];
 
-
   # Enable the X11 windowing system.
   services.xserver = {
 	enable = true;
@@ -129,7 +121,6 @@ programs.light.enable = true;
     extraModules = [ ];
     package = pkgs.pulseaudioFull;
   };
-
 
   services.nginx.appendConfig = ''
   stream {

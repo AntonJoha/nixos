@@ -6,13 +6,9 @@
 
 {
 
-
   nixpkgs.config.permittedInsecurePackages = [
     "python-2.7.18.8"
   ];
-            
-
-
 
   imports =
     [ # Include the results of the hardware scan.
@@ -23,8 +19,6 @@
       ../nixos/cronjob.nix
       ../nixos/work.nix
     ];
-
-
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -37,7 +31,6 @@ networking.networkmanager.enable = true;  # Easiest to use and most distros use 
 hardware.bluetooth.enable = true;
 services.blueman.enable = true;
 systemd.services.systemd-udevd.restartIfChanged = false;
-
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -57,11 +50,7 @@ systemd.services.systemd-udevd.restartIfChanged = false;
     LC_TIME = "sv_SE.UTF-8";
   };
 
-
   console.keyMap = "sv-latin1";
-
-
-
 
   nixpkgs.config.allowBroken = true;
    services.pipewire = {
@@ -81,7 +70,6 @@ services.pulseaudio.extraConfig = ''
   load-module module-alsa-sink device=hw:0,0 channels=4
   load-module module-alsa-source device=hw:0,7 channels=4
   '';
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -104,22 +92,19 @@ git
      wget
    ];
 
-
     services.displayManager = {
       defaultSession = "none+i3";
     };
 
-
   services.xserver = {
     enable = true;
-
 
 xkb.layout = "se";
     xkb.variant = "";
     desktopManager = {
       xterm.enable = false;
     };
-    
+
     windowManager.i3 = {
 
    enable = true;
@@ -132,7 +117,7 @@ xkb.layout = "se";
     };
 
   };
-   
+
   services = {
 	libinput.enable = true;
 };
@@ -140,4 +125,3 @@ xkb.layout = "se";
    system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

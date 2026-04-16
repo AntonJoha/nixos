@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-
 a="Make a schedule for the day based on this '$(python ~/Documents/cal/cal.py)'"
-
 res="'$(ollama run schedule "$a")'"
 echo "$res" > /tmp/script
 kvitto_ssh /tmp/script

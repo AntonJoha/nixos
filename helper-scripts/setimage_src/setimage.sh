@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 for a in "$@";
 do
 	if [ "$a" = "-f" ];

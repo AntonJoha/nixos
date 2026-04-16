@@ -16,7 +16,6 @@ setxkbmap se
 
 xrandr --output DVI-D-0 --auto --output HDMI-0 --right-of DVI-D-0
 
-
 #DONE
 ./home/kentagent/Scripts/downloadupdates
 notify-send "Startup done"
