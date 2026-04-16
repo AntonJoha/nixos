@@ -72,6 +72,11 @@ nixpkgs.config = {
 
     whatsapp-electron
     (vale.withStyles (s: [ s.alex s.google s.write-good s.proselint]))
+
+
+    manim
+
+    github-copilot-cli
  ];
 
 services.pcscd.enable = true;
