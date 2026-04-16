@@ -67,7 +67,7 @@ open_office() {
 	fi
 }
 
-if [[ "$target" =~ ^[a-z][a-z0-9+.-]*:// ]]; then
+if [[ "$target" =~ ^[a-zA-Z][a-zA-Z0-9+.-]*:// ]]; then
 	open_browser
 	exit 0
 fi
