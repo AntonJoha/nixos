@@ -42,7 +42,7 @@ nixpkgs.config = {
     steam-run
     prismlauncher
 
-    discord
+    
     zoom-us
     edwood
     xdg-utils
@@ -61,12 +61,12 @@ nixpkgs.config = {
 
     scrcpy
 
-    slack
+    
 
     gimp
 
     restream
-    newsboat
+    
 
     whatsapp-electron
     (vale.withStyles (s: [ s.alex s.google s.write-good s.proselint]))
