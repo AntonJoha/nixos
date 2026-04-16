@@ -2,8 +2,7 @@
 {
 
  environment.systemPackages = with pkgs; [
-   minikube
-   go
+   
    docker
 
  ];
