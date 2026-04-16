@@ -152,7 +152,7 @@ function choise() {
     done < ~/.temp
     if [[ $nb == 1 ]]; then
        echo -e "no output connected."
-       exit 84 
+       exit 84
     fi
     rm -f ~/.temp
     while [[ 1 ]]; do

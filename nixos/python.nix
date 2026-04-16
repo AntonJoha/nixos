@@ -1,10 +1,9 @@
 { pkgs, inputs, lib, ... }:
 {
 
-
  environment.systemPackages = with pkgs; [
-   (python313.withPackages(ps: with ps; 
-   [ 
+   (python313.withPackages(ps: with ps;
+   [
      ollama
      pyppeteer
       numpy

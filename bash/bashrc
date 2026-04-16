@@ -3,3 +3,10 @@ export SERVER=ssh.antonlinder.xyz
 
 export PATH=/home/kentagent/.cargo/bin/:/home/kentagent/nixos/helper-scripts:$PATH
 export KUBECONFIG=~/.kube/config
+
+if [[ $- == *i* ]]; then
+	terminal_start_script="${HOME}/nixos/helper-scripts/terminal_start"
+	if [[ -x "$terminal_start_script" ]]; then
+		"$terminal_start_script"
+	fi
+fi
