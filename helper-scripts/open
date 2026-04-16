@@ -8,8 +8,12 @@ if [ "$#" -lt 1 ]; then
 fi
 
 target="$1"
-ext="${target##*.}"
-ext="${ext,,}"
+ext=""
+filename="${target##*/}"
+if [[ "$filename" == *.* ]]; then
+	ext="${filename##*.}"
+	ext="${ext,,}"
+fi
 
 open_editor() {
 	if command -v vim >/dev/null 2>&1; then
