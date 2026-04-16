@@ -18,6 +18,7 @@
       ../nixos/python.nix
       ../nixos/cronjob.nix
       ../nixos/work.nix
+     ../nixos/rust.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
