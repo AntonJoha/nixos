@@ -1,7 +1,6 @@
 { pkgs, inputs, lib, ... }:
 {
 
-
  environment.systemPackages = with pkgs; [
    minikube
    go
@@ -10,9 +9,6 @@
  ];
 
 virtualisation.docker.enable = true;
-
-
-
 
 #networking.wg-quick.interfaces = {
   #"wg0" = {
@@ -36,5 +32,3 @@ networking.networkmanager.dns = "systemd-resolved";
 services.resolved.enable = true;
 
 }
-
-

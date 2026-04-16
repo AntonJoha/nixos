@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 cd ~/vimwiki
 git pull
 
@@ -9,5 +8,3 @@ vim -c VimwikiMakeDiaryNote
 git add .
 git commit -m "update"
 git push
-
-

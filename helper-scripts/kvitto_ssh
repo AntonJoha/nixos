@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-echo "HO"
-kvitto -f $1 -o  /tmp/kvitto -c
-echo "HI"
-scp  /tmp/kvitto pi@ssh.antonlinder.xyz:/tmp/kvittofil
-echo "HELLO"
-ssh pi@ssh.antonlinder.xyz " kvitto -f /tmp/kvittofil" 
+kvitto -f "$1" -o /tmp/kvitto -c
+scp "/tmp/kvitto" "pi@ssh.antonlinder.xyz:/tmp/kvittofil"
+ssh pi@ssh.antonlinder.xyz "kvitto -f /tmp/kvittofil"

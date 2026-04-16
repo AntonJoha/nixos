@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if ! weather 2>/dev/null; then
+  echo "Weather unavailable"
+fi
+printf "🕒 %s\n" "$(date "+%A %Y-%m-%d %H:%M")"

@@ -4,7 +4,6 @@
 
 { config, pkgs, ... }:
 
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -16,7 +15,6 @@
       ../nixos/cronjob.nix
       ../nixos/work.nix
     ];
-
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -30,7 +28,6 @@ networking.wireless.userControlled.enable = true;
 networking.wireless.userControlled.group = "network";
 hardware.bluetooth.enable = true;
 services.blueman.enable = true;
-
 
 hardware.bluetooth.settings = {
   General = {
@@ -55,7 +52,7 @@ i18n.defaultLocale = "sv_SE.UTF-8";
   # Enable the X11 windowing system.
   services.xserver = {
 	enable = true;
-	
+
 	desktopManager = {
 		xterm.enable = false;
 	};
@@ -78,8 +75,6 @@ i18n.defaultLocale = "sv_SE.UTF-8";
 	xkbOptions = "eurosign:e";
 };
 
-  
-
   # Configure keymap in X11
 #services.xserver.layout = "sv-latin1";
   # services.xserver.xkbOptions = {
@@ -98,8 +93,6 @@ i18n.defaultLocale = "sv_SE.UTF-8";
     extraModules = [ ];
     package = pkgs.pulseaudioFull;
   };
-
-
 
   # Enable touchpad support (enabled default in most desktopManager).
 services.xserver.libinput.enable = true;
@@ -151,7 +144,6 @@ networking.firewall.enable = false;
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 
-
   nixpkgs.overlays = let
     nix-matlab = import (builtins.fetchTarball "https://gitlab.com/doronbehar/nix-matlab/-/archive/master/nix-matlab-master.tar.gz");
   in [
@@ -163,8 +155,4 @@ networking.firewall.enable = false;
     )
   ];
 
-
-
 }
-
-

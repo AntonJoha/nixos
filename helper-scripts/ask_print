@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-
 ollama run test "$@" > /tmp/kvitto_placeholder
-kvitto -t "$(fold  -w 48 -s /tmp/kvitto_placeholder)" -o /tmp/kvitto -c
+kvitto -t "$(fold -w 48 -s /tmp/kvitto_placeholder)" -o /tmp/kvitto -c
 
-scp  /tmp/kvitto pi@ssh.antonlinder.xyz:/tmp/kvittofil
-echo "HELLO"
-ssh pi@ssh.antonlinder.xyz " kvitto -f /tmp/kvittofil" 
+scp "/tmp/kvitto" "pi@ssh.antonlinder.xyz:/tmp/kvittofil"
+ssh pi@ssh.antonlinder.xyz "kvitto -f /tmp/kvittofil"

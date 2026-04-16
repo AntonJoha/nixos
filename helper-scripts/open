@@ -1,2 +1,2 @@
 #!/bin/sh
-xdg-open $1  2> /dev/null >/dev/null &
+xdg-open "$1" >/dev/null 2>/dev/null &

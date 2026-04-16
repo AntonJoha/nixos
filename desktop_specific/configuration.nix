@@ -45,7 +45,7 @@ i18n.defaultLocale = "sv_SE.UTF-8";
   # Enable the X11 windowing system.
   services.xserver = {
 	enable = true;
-	
+
 	desktopManager = {
 		xterm.enable = false;
 	};
@@ -67,8 +67,6 @@ i18n.defaultLocale = "sv_SE.UTF-8";
 	layout = "se";
 	xkbOptions = "eurosign:e";
 };
-
-  
 
   # Configure keymap in X11
 #services.xserver.layout = "sv-latin1";
@@ -103,8 +101,6 @@ services.xserver.libinput.enable = true;
     ];
     initialPassword = "pass";
  };
-
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -144,4 +140,3 @@ networking.firewall.enable = false;
   system.stateVersion = "22.05"; # Did you read the comment?
 
 }
-
