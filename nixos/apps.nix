@@ -12,6 +12,7 @@ nixpkgs.config = {
    google-chrome
     zathura
     wget
+    file
 	alacritty
 	git
 	mpv

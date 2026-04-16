@@ -1,2 +1,144 @@
-#!/bin/sh
-xdg-open "$1" >/dev/null 2>/dev/null &
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 1 ]; then
+	echo "Usage: open <file-or-url>"
+	exit 1
+fi
+
+target="$1"
+ext=""
+filename="${target##*/}"
+if [[ "$filename" == *.* ]]; then
+	ext="${filename##*.}"
+	ext="${ext,,}"
+fi
+
+open_editor() {
+	if command -v vim >/dev/null 2>&1; then
+		vim -- "$target"
+	elif [ -n "${EDITOR:-}" ] && command -v "${EDITOR}" >/dev/null 2>&1; then
+		"${EDITOR}" -- "$target"
+	elif command -v nvim >/dev/null 2>&1; then
+		nvim -- "$target"
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+open_browser() {
+	if command -v firefox >/dev/null 2>&1; then
+		firefox "$target" >/dev/null 2>/dev/null &
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+open_media() {
+	if command -v mpv >/dev/null 2>&1; then
+		mpv "$target" >/dev/null 2>/dev/null &
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+open_image() {
+	if command -v feh >/dev/null 2>&1; then
+		feh "$target" >/dev/null 2>/dev/null &
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+open_document() {
+	if command -v zathura >/dev/null 2>&1; then
+		zathura "$target" >/dev/null 2>/dev/null &
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+open_office() {
+	if command -v libreoffice >/dev/null 2>&1; then
+		libreoffice "$target" >/dev/null 2>/dev/null &
+	else
+		xdg-open "$target" >/dev/null 2>/dev/null &
+	fi
+}
+
+if [[ "$target" =~ ^[a-zA-Z][a-zA-Z0-9+.-]*:// ]]; then
+	open_browser
+	exit 0
+fi
+
+if [ -d "$target" ]; then
+	xdg-open "$target" >/dev/null 2>/dev/null &
+	exit 0
+fi
+
+case "$filename" in
+	Makefile|makefile|Dockerfile|CMakeLists.txt|Justfile|Rakefile|Vagrantfile)
+		open_editor
+		exit 0
+		;;
+esac
+
+case "$ext" in
+	py|c|h|cc|cpp|cxx|hpp|rs|go|java|kt|js|jsx|ts|tsx|php|rb|pl|sh|bash|zsh|fish|nix|lua|vim|sql|toml|yaml|yml|json|ini|cfg|conf|env|tex|r|m|scala|swift)
+		open_editor
+		exit 0
+		;;
+	html|htm|xhtml|xml|svg|md|markdown|rst|adoc|asciidoc)
+		open_browser
+		exit 0
+		;;
+	mp4|mkv|webm|mov|avi|m4v|flv|mpg|mpeg|mp3|wav|flac|ogg|m4a|aac|opus)
+		open_media
+		exit 0
+		;;
+	jpg|jpeg|png|gif|webp|bmp|tif|tiff|heic|avif|ico)
+		open_image
+		exit 0
+		;;
+	pdf|djvu|epub)
+		open_document
+		exit 0
+		;;
+	odt|ods|odp|doc|docx|xls|xlsx|ppt|pptx)
+		open_office
+		exit 0
+		;;
+esac
+
+if [ -e "$target" ] && command -v file >/dev/null 2>&1; then
+	mime_type="$(file --brief --mime-type --dereference -- "$target")"
+	case "$mime_type" in
+		video/*|audio/*)
+			open_media
+			exit 0
+			;;
+		application/pdf|application/epub+zip|image/vnd.djvu)
+			open_document
+			exit 0
+			;;
+		text/html|application/xhtml+xml|application/xml|text/xml|image/svg+xml)
+			open_browser
+			exit 0
+			;;
+		image/*)
+			open_image
+			exit 0
+			;;
+		application/vnd.oasis.opendocument.*|application/msword|application/vnd.ms-excel|application/vnd.ms-powerpoint|application/vnd.openxmlformats-officedocument.*)
+			open_office
+			exit 0
+			;;
+		text/*|application/json|application/javascript|application/x-shellscript|inode/x-empty)
+			open_editor
+			exit 0
+			;;
+	esac
+fi
+
+xdg-open "$target" >/dev/null 2>/dev/null &
