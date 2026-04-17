@@ -27,7 +27,7 @@ add_todo() {
 
   mkdir -p "$TODO_DIR"
 
-  target_yearweek="$(date -d 'next week' '+%G%V')"
+  target_yearweek="$(date -d '+7 days' '+%G%V')"
   target_file="${TODO_DIR}/todo${target_yearweek}"
 
   ensure_file_with_flag "$target_file"
@@ -57,11 +57,12 @@ print_due_todos() {
   current_yearweek="$(date '+%G%V')"
 
   shopt -s nullglob
+  # File naming format is todoYYYYWW (ISO week-year + 2-digit ISO week).
   for file in "$TODO_DIR"/todo[0-9][0-9][0-9][0-9][0-9][0-9]; do
     basename="${file##*/}"
     file_yearweek="${basename#todo}"
 
-    if [[ "$file_yearweek" > "$current_yearweek" ]]; then
+    if (( 10#${file_yearweek} > 10#${current_yearweek} )); then
       continue
     fi
 
@@ -75,7 +76,11 @@ print_due_todos() {
     grep -v "^${PRINT_FLAG_PREFIX}" "$file" > "$content_file" || true
 
     if [ -s "$content_file" ]; then
-      kvitto_ssh "$content_file"
+      if ! kvitto_ssh "$content_file"; then
+        echo "Failed to print todo week ${file_yearweek} (${file}); will retry on next run." >&2
+        rm -f "$content_file"
+        continue
+      fi
     fi
 
     sed -i "s/^${PRINT_FLAG_PREFIX}.*/${PRINT_FLAG_PREFIX}1/" "$file"
