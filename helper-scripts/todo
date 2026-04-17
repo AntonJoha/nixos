@@ -53,6 +53,11 @@ add_todo() {
 print_due_todos() {
   local current_yearweek file basename file_yearweek content_file
 
+  if ! command -v kvitto_ssh >/dev/null 2>&1; then
+    echo "kvitto_ssh is required for --print-due." >&2
+    exit 1
+  fi
+
   mkdir -p "$TODO_DIR"
   current_yearweek="$(date '+%G%V')"
 
