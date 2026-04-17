@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+TODO_DIR="${HOME}/.local/todo"
+PRINT_FLAG_PREFIX="# printed="
+
+ensure_file_with_flag() {
+  local file="$1"
+
+  if [ ! -f "$file" ]; then
+    printf '%s\n' "${PRINT_FLAG_PREFIX}0" > "$file"
+    return
+  fi
+
+  if ! grep -q "^${PRINT_FLAG_PREFIX}" "$file"; then
+    {
+      printf '%s\n' "${PRINT_FLAG_PREFIX}0"
+      cat "$file"
+    } > "${file}.tmp"
+    mv "${file}.tmp" "$file"
+  fi
+}
+
+add_todo() {
+  local text target_yearweek target_file
+
+  mkdir -p "$TODO_DIR"
+
+  target_yearweek="$(date -d 'next week' '+%G%V')"
+  target_file="${TODO_DIR}/todo${target_yearweek}"
+
+  ensure_file_with_flag "$target_file"
+
+  if [ "$#" -gt 0 ]; then
+    text="$*"
+  elif [ ! -t 0 ]; then
+    text="$(cat)"
+  else
+    echo "Usage: todo <text>" >&2
+    echo "       echo <text> | todo" >&2
+    exit 1
+  fi
+
+  if [ -z "$text" ]; then
+    echo "Refusing to append empty todo." >&2
+    exit 1
+  fi
+
+  printf '%s\n' "$text" >> "$target_file"
+}
+
+print_due_todos() {
+  local current_yearweek file basename file_yearweek content_file
+
+  mkdir -p "$TODO_DIR"
+  current_yearweek="$(date '+%G%V')"
+
+  shopt -s nullglob
+  for file in "$TODO_DIR"/todo[0-9][0-9][0-9][0-9][0-9][0-9]; do
+    basename="${file##*/}"
+    file_yearweek="${basename#todo}"
+
+    if [[ "$file_yearweek" > "$current_yearweek" ]]; then
+      continue
+    fi
+
+    ensure_file_with_flag "$file"
+
+    if grep -q "^${PRINT_FLAG_PREFIX}1$" "$file"; then
+      continue
+    fi
+
+    content_file="$(mktemp)"
+    grep -v "^${PRINT_FLAG_PREFIX}" "$file" > "$content_file" || true
+
+    if [ -s "$content_file" ]; then
+      kvitto_ssh "$content_file"
+    fi
+
+    sed -i "s/^${PRINT_FLAG_PREFIX}.*/${PRINT_FLAG_PREFIX}1/" "$file"
+    rm -f "$content_file"
+  done
+}
+
+if [ "${1:-}" = "--print-due" ]; then
+  shift
+  if [ "$#" -ne 0 ]; then
+    echo "Usage: todo --print-due" >&2
+    exit 1
+  fi
+  print_due_todos
+  exit 0
+fi
+
+add_todo "$@"
