@@ -52,8 +52,19 @@ echo "Deleting local branches:"
 printf '%s\n' "${branches_to_delete[@]}"
 deletion_failed=false
 for branch in "${branches_to_delete[@]}"; do
-  if ! git branch -D "${branch}"; then
-    deletion_failed=true
+  if [ "${force_delete}" = true ]; then
+    if ! git branch -D "${branch}"; then
+      deletion_failed=true
+    fi
+  else
+    if ! git merge-base --is-ancestor "${branch}" refs/heads/main; then
+      echo "Skipping '${branch}': branch head is not merged into main." >&2
+      deletion_failed=true
+      continue
+    fi
+    if ! git branch -D "${branch}"; then
+      deletion_failed=true
+    fi
   fi
 done
 
