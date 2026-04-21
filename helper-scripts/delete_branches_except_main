@@ -3,16 +3,23 @@
 set -euo pipefail
 
 force_delete=false
+delete_remote=false
 
-if [ "${1:-}" = "--force" ]; then
-  force_delete=true
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --force)
+      force_delete=true
+      ;;
+    --remote)
+      delete_remote=true
+      ;;
+    *)
+      echo "Usage: delete_branches_except_main [--force] [--remote]" >&2
+      exit 1
+      ;;
+  esac
   shift
-fi
-
-if [ "$#" -ne 0 ]; then
-  echo "Usage: delete_branches_except_main [--force]" >&2
-  exit 1
-fi
+done
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: not inside a git repository." >&2
@@ -67,6 +74,49 @@ for branch in "${branches_to_delete[@]}"; do
     fi
   fi
 done
+
+if [ "${delete_remote}" = true ]; then
+  remote_name="origin"
+  if ! git config --get "remote.${remote_name}.url" >/dev/null; then
+    echo "Error: remote '${remote_name}' does not exist." >&2
+    exit 1
+  fi
+
+  if ! git show-ref --verify --quiet "refs/remotes/${remote_name}/main"; then
+    echo "Error: remote branch '${remote_name}/main' does not exist locally. Run 'git fetch ${remote_name}' first." >&2
+    exit 1
+  fi
+
+  if [ "${force_delete}" = true ]; then
+    mapfile -t remote_branches_to_delete < <(
+      git for-each-ref --format='%(refname:short)' "refs/remotes/${remote_name}" |
+        awk -v remote="${remote_name}" '$0 != remote "/main" && $0 != remote "/HEAD"'
+    )
+  else
+    mapfile -t remote_branches_to_delete < <(
+      git for-each-ref --merged="refs/remotes/${remote_name}/main" --format='%(refname:short)' "refs/remotes/${remote_name}" |
+        awk -v remote="${remote_name}" '$0 != remote "/main" && $0 != remote "/HEAD"'
+    )
+  fi
+
+  if [ "${#remote_branches_to_delete[@]}" -eq 0 ]; then
+    echo "No remote branches to delete."
+  else
+    echo "Deleting remote branches from ${remote_name}:"
+    printf '%s\n' "${remote_branches_to_delete[@]}"
+    for remote_branch in "${remote_branches_to_delete[@]}"; do
+      branch_name="${remote_branch#${remote_name}/}"
+      if [ "${force_delete}" = true ] || git merge-base --is-ancestor "refs/remotes/${remote_name}/${branch_name}" "refs/remotes/${remote_name}/main"; then
+        if ! git push "${remote_name}" --delete "${branch_name}"; then
+          deletion_failed=true
+        fi
+      else
+        echo "Skipping '${remote_branch}': branch head is not merged into ${remote_name}/main." >&2
+        deletion_failed=true
+      fi
+    done
+  fi
+fi
 
 if [ "${deletion_failed}" = true ]; then
   exit 1
