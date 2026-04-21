@@ -11,14 +11,11 @@ while [ "$#" -gt 0 ]; do
     --force)
       force_delete=true
       ;;
-    --remote)
-      delete_remote=true
-      ;;
     --local-only)
       delete_remote=false
       ;;
     *)
-      echo "Usage: delete_branches_except_main [--force] [--remote] [--local-only]" >&2
+      echo "Usage: delete_branches_except_main [--force] [--local-only]" >&2
       exit 1
       ;;
   esac
@@ -61,7 +58,7 @@ else
   printf '%s\n' "${branches_to_delete[@]}"
   for branch in "${branches_to_delete[@]}"; do
     if [ "${force_delete}" = true ]; then
-      if ! git branch -D "${branch}"; then
+      if ! git branch -d "${branch}"; then
         deletion_failed=true
       fi
     else
