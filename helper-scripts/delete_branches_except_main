@@ -2,6 +2,18 @@
 
 set -euo pipefail
 
+force_delete=false
+
+if [ "${1:-}" = "--force" ]; then
+  force_delete=true
+  shift
+fi
+
+if [ "$#" -ne 0 ]; then
+  echo "Usage: delete_branches_except_main [--force]" >&2
+  exit 1
+fi
+
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: not inside a git repository." >&2
   exit 1
@@ -26,8 +38,22 @@ fi
 
 echo "Deleting local branches:"
 printf '%s\n' "${branches_to_delete[@]}"
+deletion_failed=false
 for branch in "${branches_to_delete[@]}"; do
-  git branch -D "${branch}"
+  if [ "${force_delete}" = true ]; then
+    if ! git branch -D "${branch}"; then
+      deletion_failed=true
+    fi
+  else
+    if ! git branch -d "${branch}"; then
+      echo "Branch '${branch}' was not fully merged; rerun with --force to delete it." >&2
+      deletion_failed=true
+    fi
+  fi
 done
+
+if [ "${deletion_failed}" = true ]; then
+  exit 1
+fi
 
 echo "Done."
