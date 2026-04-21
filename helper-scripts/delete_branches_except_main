@@ -62,7 +62,7 @@ else
         deletion_failed=true
       fi
     else
-      if ! git branch -d "${branch}"; then
+      if ! git branch -D "${branch}"; then
         deletion_failed=true
       fi
     fi
