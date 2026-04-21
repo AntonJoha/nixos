@@ -107,7 +107,7 @@ nixpkgs.overlays = [
           tnoremap <Esc> <C-\><C-n><CR>
           augroup python_autoformat
             autocmd!
-            autocmd BufWritePre *.py silent! Neoformat
+            autocmd BufWritePre *.py silent Neoformat
           augroup END
 
           lua <<EOF
