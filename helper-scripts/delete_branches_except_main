@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "Error: not inside a git repository." >&2
+  exit 1
+fi
+
+current_branch="$(git branch --show-current)"
+
+if [ -z "${current_branch}" ]; then
+  echo "Error: unable to determine current branch." >&2
+  exit 1
+fi
+
+mapfile -t branches_to_delete < <(
+  git for-each-ref --format='%(refname:short)' refs/heads |
+    awk -v current="${current_branch}" '$0 != "main" && $0 != current'
+)
+
+if [ "${#branches_to_delete[@]}" -eq 0 ]; then
+  echo "No branches to delete."
+  exit 0
+fi
+
+echo "Deleting local branches:"
+printf '%s\n' "${branches_to_delete[@]}"
+for branch in "${branches_to_delete[@]}"; do
+  git branch -D "${branch}"
+done
+
+echo "Done."
