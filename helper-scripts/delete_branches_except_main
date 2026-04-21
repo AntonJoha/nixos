@@ -16,6 +16,8 @@ while [ "$#" -gt 0 ]; do
       ;;
     *)
       echo "Usage: delete_branches_except_main [--force] [--local-only]" >&2
+      echo "Deletes local copilot/* branches (merged into main by default; all local copilot/* branches with --force)." >&2
+      echo "Also attempts to delete matching remote branches by default; use --local-only to skip remote deletion." >&2
       exit 1
       ;;
   esac
