@@ -3,7 +3,8 @@
 set -euo pipefail
 
 force_delete=false
-delete_remote=false
+delete_remote=true
+deletion_failed=false
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -13,8 +14,11 @@ while [ "$#" -gt 0 ]; do
     --remote)
       delete_remote=true
       ;;
+    --local-only)
+      delete_remote=false
+      ;;
     *)
-      echo "Usage: delete_branches_except_main [--force] [--remote]" >&2
+      echo "Usage: delete_branches_except_main [--force] [--remote] [--local-only]" >&2
       exit 1
       ;;
   esac
@@ -41,39 +45,37 @@ fi
 if [ "${force_delete}" = true ]; then
   mapfile -t branches_to_delete < <(
     git for-each-ref --format='%(refname:short)' refs/heads |
-      awk -v current="${current_branch}" '$0 != "main" && $0 != current'
+      awk -v current="${current_branch}" '$0 != current && $0 ~ /^copilot\//'
   )
 else
   mapfile -t branches_to_delete < <(
     git for-each-ref --merged=refs/heads/main --format='%(refname:short)' refs/heads |
-      awk -v current="${current_branch}" '$0 != "main" && $0 != current'
+      awk -v current="${current_branch}" '$0 != current && $0 ~ /^copilot\//'
   )
 fi
 
 if [ "${#branches_to_delete[@]}" -eq 0 ]; then
-  echo "No branches to delete."
-  exit 0
+  echo "No local copilot branches to delete."
+else
+  echo "Deleting local copilot branches:"
+  printf '%s\n' "${branches_to_delete[@]}"
+  for branch in "${branches_to_delete[@]}"; do
+    if [ "${force_delete}" = true ]; then
+      if ! git branch -D "${branch}"; then
+        deletion_failed=true
+      fi
+    else
+      if ! git merge-base --is-ancestor "${branch}" refs/heads/main; then
+        echo "Skipping '${branch}': branch head is not merged into main." >&2
+        deletion_failed=true
+        continue
+      fi
+      if ! git branch -D "${branch}"; then
+        deletion_failed=true
+      fi
+    fi
+  done
 fi
-
-echo "Deleting local branches:"
-printf '%s\n' "${branches_to_delete[@]}"
-deletion_failed=false
-for branch in "${branches_to_delete[@]}"; do
-  if [ "${force_delete}" = true ]; then
-    if ! git branch -D "${branch}"; then
-      deletion_failed=true
-    fi
-  else
-    if ! git merge-base --is-ancestor "${branch}" refs/heads/main; then
-      echo "Skipping '${branch}': branch head is not merged into main." >&2
-      deletion_failed=true
-      continue
-    fi
-    if ! git branch -D "${branch}"; then
-      deletion_failed=true
-    fi
-  fi
-done
 
 if [ "${delete_remote}" = true ]; then
   remote_name="origin"
@@ -90,28 +92,23 @@ if [ "${delete_remote}" = true ]; then
   if [ "${force_delete}" = true ]; then
     mapfile -t remote_branches_to_delete < <(
       git for-each-ref --format='%(refname:short)' "refs/remotes/${remote_name}" |
-        awk -v remote="${remote_name}" '$0 != remote "/main" && $0 != remote "/HEAD"'
+        awk -v remote="${remote_name}" '$0 ~ ("^" remote "/copilot/")'
     )
   else
     mapfile -t remote_branches_to_delete < <(
       git for-each-ref --merged="refs/remotes/${remote_name}/main" --format='%(refname:short)' "refs/remotes/${remote_name}" |
-        awk -v remote="${remote_name}" '$0 != remote "/main" && $0 != remote "/HEAD"'
+        awk -v remote="${remote_name}" '$0 ~ ("^" remote "/copilot/")'
     )
   fi
 
   if [ "${#remote_branches_to_delete[@]}" -eq 0 ]; then
-    echo "No remote branches to delete."
+    echo "No remote copilot branches to delete."
   else
-    echo "Deleting remote branches from ${remote_name}:"
+    echo "Deleting remote copilot branches from ${remote_name}:"
     printf '%s\n' "${remote_branches_to_delete[@]}"
     for remote_branch in "${remote_branches_to_delete[@]}"; do
       branch_name="${remote_branch#${remote_name}/}"
-      if [ "${force_delete}" = true ] || git merge-base --is-ancestor "refs/remotes/${remote_name}/${branch_name}" "refs/remotes/${remote_name}/main"; then
-        if ! git push "${remote_name}" --delete "${branch_name}"; then
-          deletion_failed=true
-        fi
-      else
-        echo "Skipping '${remote_branch}': branch head is not merged into ${remote_name}/main." >&2
+      if ! git push "${remote_name}" --delete "${branch_name}"; then
         deletion_failed=true
       fi
     done
