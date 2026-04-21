@@ -111,7 +111,14 @@ nixpkgs.overlays = [
           augroup END
 
           lua <<EOF
-            vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              pattern = "*",
+              callback = function()
+                if vim.bo.filetype ~= "python" then
+                  vim.lsp.buf.format()
+                end
+              end,
+            })
           EOF
 
           " ...
@@ -125,4 +132,3 @@ nixpkgs.overlays = [
     }
   )];
 }
-
