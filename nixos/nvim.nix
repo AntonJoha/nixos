@@ -78,6 +78,12 @@ nixpkgs.overlays = [
           let g:airline#extensions#coc#enabled = 1
 
           let g:neoformat_enabled_python = ['autopep8']
+          let g:coc_user_config = {
+          \ 'python.analysis.typeCheckingMode': 'off',
+          \ 'python.analysis.inlayHints.variableTypes': v:false,
+          \ 'python.analysis.inlayHints.functionReturnTypes': v:false,
+          \ 'python.analysis.inlayHints.callArgumentNames': v:false
+          \}
 
           " Enable tab to space conversion
           let g:neoformat_basic_format_retab = 1
@@ -101,6 +107,7 @@ nixpkgs.overlays = [
 
           "Remapping for the terminal command to allow <ESC> instead of \N combination
           tnoremap <Esc> <C-\><C-n><CR>
+          autocmd BufWritePre *.py silent! Neoformat
 
           lua <<EOF
             vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
@@ -117,6 +124,5 @@ nixpkgs.overlays = [
     }
   )];
 }
-
 
 
