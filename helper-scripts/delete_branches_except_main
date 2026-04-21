@@ -3,16 +3,26 @@
 set -euo pipefail
 
 force_delete=false
+delete_remote=true
+deletion_failed=false
 
-if [ "${1:-}" = "--force" ]; then
-  force_delete=true
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --force)
+      force_delete=true
+      ;;
+    --local-only)
+      delete_remote=false
+      ;;
+    *)
+      echo "Usage: delete_branches_except_main [--force] [--local-only]" >&2
+      echo "Deletes local copilot/* branches (merged into main by default; all local copilot/* branches with --force)." >&2
+      echo "Also attempts to delete matching remote branches by default; use --local-only to skip remote deletion." >&2
+      exit 1
+      ;;
+  esac
   shift
-fi
-
-if [ "$#" -ne 0 ]; then
-  echo "Usage: delete_branches_except_main [--force]" >&2
-  exit 1
-fi
+done
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: not inside a git repository." >&2
@@ -34,39 +44,70 @@ fi
 if [ "${force_delete}" = true ]; then
   mapfile -t branches_to_delete < <(
     git for-each-ref --format='%(refname:short)' refs/heads |
-      awk -v current="${current_branch}" '$0 != "main" && $0 != current'
+      awk -v current="${current_branch}" '$0 != current && $0 ~ /^copilot\//'
   )
 else
   mapfile -t branches_to_delete < <(
     git for-each-ref --merged=refs/heads/main --format='%(refname:short)' refs/heads |
-      awk -v current="${current_branch}" '$0 != "main" && $0 != current'
+      awk -v current="${current_branch}" '$0 != current && $0 ~ /^copilot\//'
   )
 fi
 
 if [ "${#branches_to_delete[@]}" -eq 0 ]; then
-  echo "No branches to delete."
-  exit 0
+  echo "No local copilot branches to delete."
+else
+  echo "Deleting local copilot branches:"
+  printf '%s\n' "${branches_to_delete[@]}"
+  for branch in "${branches_to_delete[@]}"; do
+    if [ "${force_delete}" = true ]; then
+      if ! git branch -D "${branch}"; then
+        deletion_failed=true
+      fi
+    else
+      if ! git branch -D "${branch}"; then
+        deletion_failed=true
+      fi
+    fi
+  done
 fi
 
-echo "Deleting local branches:"
-printf '%s\n' "${branches_to_delete[@]}"
-deletion_failed=false
-for branch in "${branches_to_delete[@]}"; do
-  if [ "${force_delete}" = true ]; then
-    if ! git branch -D "${branch}"; then
-      deletion_failed=true
-    fi
-  else
-    if ! git merge-base --is-ancestor "${branch}" refs/heads/main; then
-      echo "Skipping '${branch}': branch head is not merged into main." >&2
-      deletion_failed=true
-      continue
-    fi
-    if ! git branch -D "${branch}"; then
-      deletion_failed=true
-    fi
+if [ "${delete_remote}" = true ]; then
+  remote_name="origin"
+  if ! git config --get "remote.${remote_name}.url" >/dev/null; then
+    echo "Error: remote '${remote_name}' does not exist." >&2
+    exit 1
   fi
-done
+
+  if ! git show-ref --verify --quiet "refs/remotes/${remote_name}/main"; then
+    echo "Error: remote branch '${remote_name}/main' does not exist locally. Run 'git fetch ${remote_name}' first." >&2
+    exit 1
+  fi
+
+  if [ "${force_delete}" = true ]; then
+    mapfile -t remote_branches_to_delete < <(
+      git for-each-ref --format='%(refname:short)' "refs/remotes/${remote_name}" |
+        awk -v remote="${remote_name}" '$0 ~ ("^" remote "/copilot/")'
+    )
+  else
+    mapfile -t remote_branches_to_delete < <(
+      git for-each-ref --merged="refs/remotes/${remote_name}/main" --format='%(refname:short)' "refs/remotes/${remote_name}" |
+        awk -v remote="${remote_name}" '$0 ~ ("^" remote "/copilot/")'
+    )
+  fi
+
+  if [ "${#remote_branches_to_delete[@]}" -eq 0 ]; then
+    echo "No remote copilot branches to delete."
+  else
+    echo "Deleting remote copilot branches from ${remote_name}:"
+    printf '%s\n' "${remote_branches_to_delete[@]}"
+    for remote_branch in "${remote_branches_to_delete[@]}"; do
+      branch_name="${remote_branch#${remote_name}/}"
+      if ! git push "${remote_name}" --delete "${branch_name}"; then
+        deletion_failed=true
+      fi
+    done
+  fi
+fi
 
 if [ "${deletion_failed}" = true ]; then
   exit 1
