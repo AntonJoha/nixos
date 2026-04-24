@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+name=/tmp/kvitto_tmp_file
+
+echo "$@" > "$name"
+
+
+scp "$name" "pi@ssh.antonlinder.xyz:/tmp/kvittofil"
+ssh pi@ssh.antonlinder.xyz "kvitto -f /tmp/kvittofil"
