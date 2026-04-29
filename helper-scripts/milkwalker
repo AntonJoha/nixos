@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+BASE_IMAGE="$SCRIPT_DIR/milkwalker_src/milkwalker.png"
+OUTPUT="/tmp/milkwalker_output.png"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: milkwalker <text>" >&2
+    exit 1
+fi
+
+TEXT="$*"
+
+if [ ! -f "$BASE_IMAGE" ]; then
+    echo "Error: milkwalker base image not found at $BASE_IMAGE" >&2
+    echo "Please add a milkwalker.png image to $SCRIPT_DIR/milkwalker_src/" >&2
+    exit 1
+fi
+
+WIDTH=$(convert "$BASE_IMAGE" -format "%w" info:)
+
+convert "$BASE_IMAGE" \
+    \( -background black -fill white \
+       -font "DejaVu-Sans-Bold" -pointsize 40 \
+       -size "${WIDTH}x" -gravity Center \
+       caption:"$TEXT" \) \
+    -append \
+    "$OUTPUT"
+
+echo "$OUTPUT"
